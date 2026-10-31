@@ -126,14 +126,14 @@ Run everything from the repository root. Developed on Linux. The ground-truth st
 7. Agent runs with Gemma 4 on CPU. Build [llama.cpp](https://github.com/ggml-org/llama.cpp) and download the Gemma 4 E4B `q4_0` GGUF (`gemma-4-E4B_q4_0-it.gguf`) into `~/.cache/callproof/models` (or set `CALLPROOF_MODELS`; the E2B file is `gemma-4-E2B_q4_0-it.gguf`). Point `LLAMA_SERVER` at the `llama-server` binary if it is not on `PATH`:
 
    ```bash
-   python scripts/run_localize.py --run-name e4b_graph_provided --model e4b --tools graph \
-       --graph provided --servers 2 --threads-per-server 8 --limit 64
-   python scripts/run_localize.py --run-name e4b_graph_callproof --model e4b --tools graph \
-       --graph results/graphs --servers 2 --threads-per-server 8 --limit 64
-   python -m callproof.localize_eval results/loc/e4b_graph_provided results/loc/e4b_graph_callproof
+   IDS=$(cat results/loc/agent_subset_gold.txt)
+   COMMON="--model e4b --tools walk --budget 10 --anchors 5 --temperature 0 --seed 0 --servers 2 --threads-per-server 6 --ids $IDS"
+   python scripts/run_localize.py --run-name e9d_provided --graph provided $COMMON
+   python scripts/run_localize.py --run-name e9d_callproof_typed --graph results/graphs --typed-neighbors --port 18500 $COMMON
+   python scripts/agent_paired.py results/loc/e9d_provided results/loc/e9d_callproof_typed
    ```
 
-   Runs resume: rerunning a command skips tasks already in `episodes.jsonl`. Sampling is stochastic, so agent numbers vary between runs; use `--seed` to fix them.
+   Runs resume: rerunning a command skips tasks already in `episodes.jsonl`. With temperature 0 and a fixed seed, runs repeat closely but not bit for bit across machines.
 
 Limits: the tracer covers the fail-to-pass tests only, so recall is measured on code those tests reach, not on the whole repository. Tasks whose tests fail at both commits or cannot be installed have no ground truth (14 of 129 here).
 
