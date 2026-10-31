@@ -162,7 +162,8 @@ def evaluate_repo(repo: Repo) -> RepoResult:
     tests = np.zeros((len(per_test), len(edges)), dtype=bool)
     for row, keys in enumerate(per_test.values()):
         for key in keys:
-            tests[row, position[tuple(key)]] = True
+            if tuple(key) in position:
+                tests[row, position[tuple(key)]] = True
     categories = {name: np.zeros(len(edges), dtype=bool) for name in CATEGORIES}
     for i, edge in enumerate(edges):
         for name in audit.edge_categories(edge, index, ancestors):
@@ -206,6 +207,8 @@ def bootstrap(results: list[RepoResult], category: str, system: str, metric: str
             hit += (chosen & flag).sum()
         if total:
             draws.append(hit / total)
+    if not draws:
+        return float("nan"), float("nan")
     low, high = np.percentile(draws, [2.5, 97.5])
     return float(low), float(high)
 
