@@ -1,12 +1,14 @@
 # Callproof
 
-An execution-checked audit of the Gemma 4 Developer Agent code graphs, plus an open builder that writes the same graph format and links most of what the tests actually call.
+Test-execution traces as ground truth for the code graphs coding agents navigate: an audit of the Gemma 4 Developer Agent graphs, an open drop-in builder that links 79% of traced calls instead of 26%, and the CallproofLP link-prediction benchmark.
 
-![Edge recall by call kind: provided graphs vs Callproof](docs/recall_by_kind.png)
+![Executed call edges linked by the provided graphs and by Callproof](docs/thumbnail.png)
+
+Paper: {{writeup_url}} (PDF: `docs/callproof.pdf`). Kaggle notebook: {{notebook_url}}.
 
 ## Headline numbers
 
-Ground truth comes from running each task's fail-to-pass tests on the gold-patched repository and recording every call edge between repository functions (9,576 traced call edges over 115 tasks). Full tables are in `results/audit/STATIC.md`.
+Ground truth comes from running each task's fail-to-pass tests on the gold-patched repository and recording every call edge between repository functions (9,576 traced call edges over 115 tasks). Full tables are in [`results/audit/STATIC.md`](results/audit/STATIC.md).
 
 | traced call edges found, with the right direction | provided graphs | Callproof |
 |---|---|---|
@@ -19,9 +21,9 @@ Other findings from the audit:
 - Every provided edge is stored in both directions, so the graph does not say who calls whom.
 - 72% of the provided `calls` pairs are not calls (they are containment, inheritance or instantiation).
 - No `async def` function and no module has a node in the provided graphs.
-- Within 3 hops of the fail-to-pass test, the provided graphs reach the gold-edited function for 15.2% of tasks and Callproof graphs for 47.9% (33 tasks).
+- Walking 3 hops from the failing test, undirected Callproof graphs reach more edited functions than the provided graphs (55.7% vs 31.3%, macro over 33 tasks) but read more nodes to do it. Following only outgoing `calls` edges matches two provided hops (25.4% vs 25.0%) while reading 36 nodes instead of 113 ([`results/audit/EXTRA.md`](results/audit/EXTRA.md)).
 
-A negative result is reported too: plain BM25 and PageRank localization do not improve with the better graph (`results/loc/baselines_eval.txt`).
+A negative result is reported too: plain BM25 and PageRank localization do not improve with the better graph ([`results/loc/baselines_eval.txt`](results/loc/baselines_eval.txt)).
 
 ## What it does
 
@@ -35,7 +37,7 @@ A negative result is reported too: plain BM25 and PageRank localization do not i
 Needs Python 3.11 or newer.
 
 ```bash
-git clone https://github.com/<owner>/callproof && cd callproof
+git clone {{repo_url}} callproof && cd callproof
 uv venv && uv pip install -e ".[test]"
 
 python -m callproof.build path/to/your/checkout graph.json --repo-name myrepo_demo
