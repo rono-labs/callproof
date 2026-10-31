@@ -46,10 +46,11 @@ BUDGETS = (5, 10, 20)
 BOOTSTRAP_DRAWS = 10_000
 CALLS_CIC = ("calls", "contains", "inherits")
 REACH_VARIANTS = {
-    "provided": ("prov", None),
-    "callproof calls": ("ours", ("calls",)),
-    "callproof calls+contains+inherits": ("ours", CALLS_CIC),
-    "callproof all edges": ("ours", None),
+    "provided": ("prov", None, False),
+    "callproof calls": ("ours", ("calls",), False),
+    "callproof calls+contains+inherits": ("ours", CALLS_CIC, False),
+    "callproof all edges": ("ours", None, False),
+    "callproof calls, directed": ("ours", ("calls",), True),
 }
 WALK_VARIANTS = {
     "provided": ("prov", None),
@@ -123,7 +124,7 @@ def precision_rows(task: dict, keys: dict[str, list[Key]], views: dict[str, audi
 def reach_rows(task: dict, keys: dict[str, list[Key]], views: dict[str, audit.GraphView], adjs: dict[str, dict]) -> list[dict]:
     rows = []
     for source, _label in SOURCES.items():
-        for variant, (name, _types) in REACH_VARIANTS.items():
+        for variant, (name, _types, _directed) in REACH_VARIANTS.items():
             key_nodes = views[name].key_nodes()
             start = nodes_of(key_nodes, keys[source])
             gold_nodes = [key_nodes.get(k, set()) for k in keys["gold"]]
@@ -194,7 +195,7 @@ def analyse_commit(dataset: Dataset, tasks: list[dict], graphs_dir: Path, ground
     provided = load_graph(dataset.graph_path(first))
     ours = load_graph(graphs_dir / f"{key}.json")
     views = {"prov": audit.GraphView.harness(provided, index), "ours": audit.GraphView.callproof(ours, index)}
-    adjs = {variant: adjacency(views[name].graph, types, directed=False) for variant, (name, types) in REACH_VARIANTS.items()}
+    adjs = {variant: adjacency(views[name].graph, types, directed) for variant, (name, types, directed) in REACH_VARIANTS.items()}
     code_graphs = {"prov": CodeGraph(dataset.graph_path(first), None, key), "ours": CodeGraph(graphs_dir / f"{key}.json", None, key)}
     result: dict[str, list] = {"precision": [], "reach": [], "walker": []}
     for task in tasks:
