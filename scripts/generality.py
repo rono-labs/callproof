@@ -168,7 +168,11 @@ def evaluate_repo(repo: Repo) -> RepoResult:
     for i, edge in enumerate(edges):
         for name in audit.edge_categories(edge, index, ancestors):
             categories[name][i] = True
-    categories["all"] = ~categories["via_test"]
+    non_test = ~categories["via_test"]
+    categories["all"] = non_test.copy()
+    for name in CATEGORIES:
+        if name not in ("all", "via_test"):
+            categories[name] &= non_test
 
     flags = {system: edge_flags(edges, view) for system, view in views.items()}
     check = audit.dynamic_edge_stats(edges, views["callproof"], index, ancestors)
@@ -191,7 +195,11 @@ def counts(result: RepoResult, category: str, system: str, edge_mask: np.ndarray
 
 
 def bootstrap(results: list[RepoResult], category: str, system: str, metric: str, seed: int = 0) -> tuple[float, float]:
-    """95% interval of pooled recall, resampling tests within each repository."""
+    """95% basic-bootstrap interval of pooled recall, resampling tests within each repository.
+
+    A resample sees only some of the tests, hence fewer rare edges, so its recall is biased against the
+    full-sample value; the basic (reflected) interval corrects for that.
+    """
     rng = np.random.default_rng(seed)
     prepared = [
         (r.tests.astype(np.uint8), r.categories[category], r.flags[system][metric])
@@ -210,7 +218,10 @@ def bootstrap(results: list[RepoResult], category: str, system: str, metric: str
     if not draws:
         return float("nan"), float("nan")
     low, high = np.percentile(draws, [2.5, 97.5])
-    return float(low), float(high)
+    estimate = sum(int((r.categories[category] & r.flags[system][metric]).sum()) for r in results) / sum(
+        int(r.categories[category].sum()) for r in results
+    )
+    return max(0.0, float(2 * estimate - high)), min(1.0, float(2 * estimate - low))
 
 
 def percent(hit: int, n: int) -> str:
@@ -274,7 +285,7 @@ def write_reports(results: list[RepoResult], pins: list[dict], traced: dict[str,
               f"- Suites larger than {MAX_TESTS} tests are sampled at evenly spaced positions in collection order.",
               "- Metrics are those of `callproof.audit` (both ends are nodes; linked in either direction; linked in the traced direction), computed per edge so tests can be resampled.",
               "- Baseline: a reimplementation (`project/scripts/provided_style.py`) of the provided graphs' documented rules, not their actual builder: harness node ids, undirected `calls` edges for containment, inheritance, instantiation and plain-name calls, no async definitions, no module nodes, no `self.method` or attribute calls. Plain names resolve by same module, then `from` imports, then a unique repository-wide name.",
-              "- Bootstrap: 1000 resamples of tests within each repository; each resample's edge set is the union of its tests' edges."]
+              "- Bootstrap: 1000 resamples of tests within each repository; each resample's edge set is the union of its tests' edges; the interval is the basic (reflected) bootstrap interval around the full-sample recall, which corrects the downward bias of resampled unions. Call-kind categories exclude `via_test` edges, except the `via_test` row itself."]
     (RESULTS / "GENERALITY.md").write_text("\n".join(lines) + "\n")
 
 
