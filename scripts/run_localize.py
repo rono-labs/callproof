@@ -29,6 +29,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--tools", choices=TOOL_SETS, default="both")
     parser.add_argument("--graph", default="provided", help="'provided' or a directory of <repo>_<commit>.json graphs")
     parser.add_argument("--budget", type=int, default=15)
+    parser.add_argument("--typed-neighbors", action="store_true", help="list outgoing and incoming neighbors separately with edge types")
     parser.add_argument("--servers", type=int, default=1)
     parser.add_argument("--threads-per-server", type=int, default=8)
     parser.add_argument("--port", type=int, default=18100)
@@ -90,6 +91,8 @@ def main() -> None:
             try:
                 repo = dataset.repo(task)
                 graph = dataset.code_graph(task, args.max_tool_chars) if args.tools != "search" else None
+                if graph is not None:
+                    graph.typed = args.typed_neighbors
                 episode = agent.run(task, ToolBox(repo, graph, args.tools), repo)
                 append(episodes_path, {"instance_id": task["instance_id"], "graph": args.graph, "tools": args.tools, **episode})
                 print(f"{task['instance_id']}: {episode['wall_seconds']}s {len(episode['tool_calls'])} calls {episode['predictions']}", flush=True)

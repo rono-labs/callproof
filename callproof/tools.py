@@ -141,6 +141,9 @@ def _error(error_type: str, message: str) -> str:
     )
 
 
+TYPE_ORDER = {"calls": 0, "inherits": 1, "contains": 2, "decorated_by": 3, "references": 4, "imports": 5}
+
+
 class CodeGraph:
     """The competition's code graph, loaded from an arbitrary graph JSON path (node-link, schema of `swegemma`)."""
 
@@ -151,6 +154,7 @@ class CodeGraph:
         self.embeddings_path = embeddings_path
         self.repo_key = repo_key
         self.max_chars = max_chars
+        self.typed = False
 
     @cached_property
     def _similarity_index(self) -> tuple[list[str], list[str], np.ndarray]:
@@ -185,6 +189,8 @@ class CodeGraph:
                     relation = data.get("type") or data.get("relation")
                     return wanted is None or (relation is not None and str(relation).lower() == wanted)
 
+                if self.typed:
+                    return self._typed_neighbors(node, target, keep, limit)
                 linked = [v for _, v, d in self.graph.out_edges(target, data=True) if keep(d)]
                 linked += [u for u, _, d in self.graph.in_edges(target, data=True) if keep(d)]
                 for other in linked:
@@ -197,6 +203,19 @@ class CodeGraph:
             return _ok(node=node, neighbors=neighbors, count=len(neighbors), is_truncated=truncated)
         except Exception as exc:
             return _error("GraphLookupError", str(exc))
+
+    def _typed_neighbors(self, node: str, target: str, keep: Callable[[dict], bool], limit: int) -> str:
+        """Direction- and type-aware variant: outgoing and incoming edges listed separately, calls first."""
+
+        def listing(edges: list[tuple[str, dict]]) -> list[str]:
+            rows = sorted({(TYPE_ORDER.get(d.get("type"), len(TYPE_ORDER)), str(other), d.get("type") or "") for other, d in edges if keep(d)})
+            return [f"{name} [{kind}]" for _, name, kind in rows][:limit]
+
+        outgoing = listing([(v, d) for _, v, d in self.graph.out_edges(target, data=True)])
+        incoming = listing([(u, d) for u, _, d in self.graph.in_edges(target, data=True)])
+        outgoing, out_truncated = _truncate_items(outgoing, self.max_chars // 2)
+        incoming, in_truncated = _truncate_items(incoming, self.max_chars // 2)
+        return _ok(node=target, outgoing=outgoing, incoming=incoming, count=len(outgoing) + len(incoming), is_truncated=out_truncated or in_truncated)
 
     def get_code_subgraph(self, nodes: list[str] | str) -> str:
         try:
@@ -488,7 +507,12 @@ SCHEMAS: dict[str, dict] = {
     ),
 }
 GRAPH_TOOLS = ("get_code_neighbors", "get_code_subgraph", "search_similar_code")
-TOOL_SETS = {"search": ("read_file", "search"), "graph": ("read_file", *GRAPH_TOOLS), "both": ("read_file", "search", *GRAPH_TOOLS)}
+TOOL_SETS = {
+    "search": ("read_file", "search"),
+    "graph": ("read_file", *GRAPH_TOOLS),
+    "walk": ("read_file", "get_code_neighbors", "get_code_subgraph"),
+    "both": ("read_file", "search", *GRAPH_TOOLS),
+}
 
 
 class ToolBox:
