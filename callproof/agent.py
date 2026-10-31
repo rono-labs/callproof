@@ -139,6 +139,8 @@ class LocalizationAgent:
         issue = task["problem_statement"][: cfg.max_issue_chars]
         hints = (task.get("hints_text") or "")[: cfg.max_hint_chars]
         prompt = f"Issue:\n{issue}" + (f"\n\nHints:\n{hints}" if hints.strip() else "")
+        if task.get("anchors"):
+            prompt += "\n\nKeyword search over function names and code suggests these starting points:\n" + "\n".join(task["anchors"])
         messages: list[dict] = [
             {"role": "system", "content": SYSTEM_PROMPT.format(budget=cfg.budget)},
             {"role": "user", "content": prompt},

@@ -14,6 +14,7 @@ from pathlib import Path
 from callproof.agent import AgentConfig, LlamaServer, LocalizationAgent
 from callproof.dataset import DEFAULT_DATA_DIR, Dataset
 from callproof.paths import resolve_cache
+from callproof.retrieve import RepoIndex, issue_query
 from callproof.tools import TOOL_SETS, ToolBox
 
 MODEL_FILES = {"e4b": "gemma-4-E4B_q4_0-it.gguf", "e2b": "gemma-4-E2B_q4_0-it.gguf"}
@@ -29,6 +30,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--tools", choices=TOOL_SETS, default="both")
     parser.add_argument("--graph", default="provided", help="'provided' or a directory of <repo>_<commit>.json graphs")
     parser.add_argument("--budget", type=int, default=15)
+    parser.add_argument("--anchors", type=int, default=0, help="prepend the top-N BM25 function ids from the provided graph")
     parser.add_argument("--typed-neighbors", action="store_true", help="list outgoing and incoming neighbors separately with edge types")
     parser.add_argument("--servers", type=int, default=1)
     parser.add_argument("--threads-per-server", type=int, default=8)
@@ -50,6 +52,12 @@ def finished_ids(path: Path) -> set[str]:
         return set()
     with open(path, encoding="utf-8") as handle:
         return {json.loads(line)["instance_id"] for line in handle if line.strip()}
+
+
+def anchors(task: dict, dataset: Dataset, repo, count: int) -> list[str]:
+    """Top BM25 function ids over the provided graph, shared by every arm so runs differ only in the graph."""
+    index = RepoIndex(Dataset(dataset.data_dir, None).code_graph(task).graph, repo)
+    return index.top_locations(index.bm25_scores(issue_query(task)), count, exclude_tests=True)
 
 
 def main() -> None:
@@ -93,6 +101,8 @@ def main() -> None:
                 graph = dataset.code_graph(task, args.max_tool_chars) if args.tools != "search" else None
                 if graph is not None:
                     graph.typed = args.typed_neighbors
+                if args.anchors:
+                    task = {**task, "anchors": anchors(task, dataset, repo, args.anchors)}
                 episode = agent.run(task, ToolBox(repo, graph, args.tools), repo)
                 append(episodes_path, {"instance_id": task["instance_id"], "graph": args.graph, "tools": args.tools, **episode})
                 print(f"{task['instance_id']}: {episode['wall_seconds']}s {len(episode['tool_calls'])} calls {episode['predictions']}", flush=True)
