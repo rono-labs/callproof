@@ -201,6 +201,27 @@ def host_distributions(search_roots: list[Path]) -> dict[str, metadata.Distribut
     return found
 
 
+def ensure_extra_packages(requirements: Path, wheels_dir: Path, envs_dir: Path) -> Path:
+    """Install the pinned extra test packages into a shared directory, from PyPI or else the offline wheels."""
+    key = hashlib.sha256(requirements.read_bytes()).hexdigest()[:12]
+    target = envs_dir / f"extra-{key}"
+    envs_dir.mkdir(parents=True, exist_ok=True)
+    with open(envs_dir / f"extra-{key}.lock", "w") as lock:
+        fcntl.flock(lock, fcntl.LOCK_EX)
+        if (target / ".ready").exists():
+            return target
+        shutil.rmtree(target, ignore_errors=True)
+        base = ["uv", "pip", "install", "--python", PYTHON, "--target", str(target), "--no-deps", "-r", str(requirements)]
+        online = subprocess.run(base, capture_output=True, text=True)
+        if online.returncode != 0:
+            shutil.rmtree(target, ignore_errors=True)
+            offline = subprocess.run([*base, "--no-index", "--find-links", str(wheels_dir)], capture_output=True, text=True)
+            if offline.returncode != 0:
+                raise RuntimeError(f"could not install {requirements}:\n{online.stderr[-400:]}\n{offline.stderr[-400:]}")
+        (target / ".ready").touch()
+    return target
+
+
 def providers(modules: tuple[str, ...], host: dict[str, metadata.Distribution]) -> list[str]:
     """Host distribution names that ship the given top-level import names."""
     wanted = {m.split(".")[0] for m in modules}

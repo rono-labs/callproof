@@ -18,9 +18,9 @@ PROJECT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(PROJECT))
 
 from callproof import sandbox  # noqa: E402
+from callproof.paths import resolve_cache, resolve_data  # noqa: E402
 from callproof.patch import extract_gold_functions, parse_diff  # noqa: E402
 
-DATA = Path(".cache/compdata/unz/root/.cache/kagglehub/competitions/gemma-4-developer-agent")
 SUMMARY_FIELDS = ["instance_id", "repo", "status", "n_f2p", "n_gold_funcs", "n_added", "n_dyn_edges", "runtime_s"]
 
 
@@ -218,21 +218,25 @@ def main() -> None:
     parser.add_argument("--tasks", default="all", help="'all', a comma list of instance ids, or a file of ids")
     parser.add_argument("--jobs", type=int, default=12)
     parser.add_argument("--out", type=Path, default=Path("results/groundtruth"))
-    parser.add_argument("--data", type=Path, default=DATA)
-    parser.add_argument("--work", type=Path, default=Path(".cache/work/groundtruth"))
-    parser.add_argument("--envs", type=Path, default=Path(".cache/work/envs"))
+    parser.add_argument("--data", type=Path, default=None, help="competition data (default: $CALLPROOF_DATA, then the kagglehub cache)")
+    parser.add_argument("--work", type=Path, default=resolve_cache() / "groundtruth")
+    parser.add_argument("--envs", type=Path, default=resolve_cache() / "envs")
     parser.add_argument("--logs", type=Path, default=Path("logs/groundtruth"))
-    parser.add_argument("--host-packages", type=Path, nargs="*", default=[Path(subprocess.check_output(["uv", "cache", "dir"], text=True).strip()) / "archive-v0"])
+    parser.add_argument("--requirements", type=Path, default=PROJECT / "requirements-test.txt", help="pinned extra test packages installed from PyPI")
+    parser.add_argument("--host-packages", type=Path, nargs="*", help="site-packages directories to use instead of --requirements")
     parser.add_argument("--timeout", type=int, default=900, help="seconds per pytest invocation")
     parser.add_argument("--node-timeout", type=int, default=20, help="seconds per isolated test when re-running a hung base")
     parser.add_argument("--keep", action="store_true", help="keep extracted checkouts")
     parser.add_argument("--redo", action="store_true", help="recompute tasks that already have output")
     args = parser.parse_args()
+    args.data = resolve_data(args.data)
     for name in ("out", "data", "work", "envs", "logs"):
         setattr(args, name, getattr(args, name).resolve())
-    args.host_packages = [p.resolve() for p in args.host_packages]
     for directory in (args.out, args.work, args.envs, args.logs):
         directory.mkdir(parents=True, exist_ok=True)
+    args.host_packages = [p.resolve() for p in args.host_packages] if args.host_packages else [
+        sandbox.ensure_extra_packages(args.requirements.resolve(), args.data / "wheels", args.envs)
+    ]
     tasks = [json.loads(line) for line in (args.data / "tasks.jsonl").read_text().splitlines() if line.strip()]
     if args.tasks != "all":
         spec = Path(args.tasks)

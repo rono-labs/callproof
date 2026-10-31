@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import queue
 import threading
 import traceback
@@ -12,10 +13,13 @@ from pathlib import Path
 
 from callproof.agent import AgentConfig, LlamaServer, LocalizationAgent
 from callproof.dataset import DEFAULT_DATA_DIR, Dataset
+from callproof.paths import resolve_cache
 from callproof.tools import TOOL_SETS, ToolBox
 
-LLAMA_SERVER = Path(".cache/llama.cpp/build/bin/llama-server")
-MODELS = {"e4b": Path(".cache/models/gemma-4-E4B_q4_0-it.gguf"), "e2b": Path(".cache/models/gemma-4-E2B_q4_0-it.gguf")}
+MODEL_FILES = {"e4b": "gemma-4-E4B_q4_0-it.gguf", "e2b": "gemma-4-E2B_q4_0-it.gguf"}
+MODELS_DIR = Path(os.environ.get("CALLPROOF_MODELS") or resolve_cache() / "models").expanduser()
+LLAMA_SERVER = os.environ.get("LLAMA_SERVER", "llama-server")
+MODELS = {name: MODELS_DIR / file for name, file in MODEL_FILES.items()}
 
 
 def parse_args() -> argparse.Namespace:
@@ -96,7 +100,7 @@ def main() -> None:
     with ExitStack() as stack:
         servers = [
             stack.enter_context(
-                LlamaServer(LLAMA_SERVER, MODELS[args.model], args.port + i, args.threads_per_server, args.context_size, Path(f"logs/llama_{args.run_name}_{i}.log"))
+                LlamaServer(Path(LLAMA_SERVER), MODELS[args.model], args.port + i, args.threads_per_server, args.context_size, Path(f"logs/llama_{args.run_name}_{i}.log"))
             )
             for i in range(args.servers)
         ]

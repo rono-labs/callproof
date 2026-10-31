@@ -6,10 +6,11 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
+from callproof.paths import resolve_cache, resolve_data
 from callproof.tools import CodeGraph, Repo, ensure_snapshot, graph_key
 
-DEFAULT_DATA_DIR = Path(".cache/compdata/unz/root/.cache/kagglehub/competitions/gemma-4-developer-agent")
-DEFAULT_SNAPSHOT_DIR = Path(".cache/work/snap")
+DEFAULT_DATA_DIR = resolve_data()
+DEFAULT_SNAPSHOT_DIR = resolve_cache() / "snap"
 
 
 @dataclass(frozen=True)

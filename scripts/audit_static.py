@@ -26,7 +26,7 @@ sys.path.insert(0, str(PROJECT))
 
 from callproof import audit  # noqa: E402
 from callproof.build import CALLS, GraphBuilder  # noqa: E402
-from callproof.dataset import Dataset  # noqa: E402
+from callproof.dataset import DEFAULT_DATA_DIR, Dataset  # noqa: E402
 from callproof.graphio import load_graph, save_graph  # noqa: E402
 from callproof.naming import RepoIndex, parse_checkout  # noqa: E402
 from callproof.tools import graph_key  # noqa: E402
@@ -254,9 +254,10 @@ def main() -> None:
     parser.add_argument("--groundtruth", type=Path, default=Path("results/groundtruth"))
     parser.add_argument("--only", nargs="*", help="instance ids to audit (default: all)")
     parser.add_argument("--seed", type=int, default=0)
+    parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR, help="competition data")
     args = parser.parse_args()
 
-    dataset = Dataset()
+    dataset = Dataset(args.data_dir)
     by_commit: dict[str, list[dict]] = defaultdict(list)
     for task in dataset.tasks(args.only):
         by_commit[graph_key(task["repo"], task["base_commit"])].append(task)

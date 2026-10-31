@@ -3,7 +3,12 @@ name = "callproof"
 version = "0.1.0"
 description = "Code graphs for coding agents, checked against what the tests actually execute"
 requires-python = ">=3.11"
-dependencies = ["networkx>=3.2", "numpy>=1.26"]
+dependencies = ["networkx>=3.2", "numpy>=1.26", "packaging>=23"]
+license = { text = "Apache-2.0" }
+
+[project.optional-dependencies]
+dense = ["sentence-transformers>=3"]
+test = ["pytest>=8"]
 
 [build-system]
 requires = ["hatchling"]
