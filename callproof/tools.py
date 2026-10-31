@@ -94,6 +94,8 @@ def resolve_node_name(target: str, graph: Any) -> str | None:
         return query
     if bare in node_set:
         return bare
+    if "::" in bare:
+        return _resolve_location(bare, node_set)
 
     def best(candidates: list[str]) -> str:
         return min(candidates, key=lambda n: (len(n.split(".")), len(n), n))
@@ -110,6 +112,19 @@ def resolve_node_name(target: str, graph: Any) -> str | None:
     if not any(c.isspace() for c in bare):
         if matches := [n for n in nodes if bare in n or lower_bare in n.lower()]:
             return best(matches)
+    return None
+
+
+def _resolve_location(location: str, node_set: set[str]) -> str | None:
+    """Map `path/to/mod.py::Class.method` to a dotted node id, dropping leading path parts for src layouts."""
+    path, qualname = (part.strip() for part in location.split("::", 1))
+    parts = path.removesuffix(".py").split("/")
+    if parts and parts[-1] == "__init__":
+        parts.pop()
+    for start in range(len(parts) + 1):
+        candidate = ".".join([*parts[start:], qualname])
+        if candidate in node_set:
+            return candidate
     return None
 
 
@@ -181,6 +196,8 @@ class CodeGraph:
             target = node.split(";", 1)[1] if ";" in node else node
             if not self.graph.has_node(target):
                 target = resolve_node_name(target, self.graph)
+            if target is None:
+                return _error("NodeNotFound", f"No graph node matches {node!r}.")
             neighbors: list[str] = []
             if target is not None:
                 wanted = None if edge_type is None else str(edge_type).lower()

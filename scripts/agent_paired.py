@@ -22,6 +22,24 @@ def surfaced(episode: dict, gold: list[dict]) -> bool:
     return any(f".{name}\"" in text or f".{name} [" in text or f".{name}," in text for name in wanted for text in texts)
 
 
+def read_gold_file(episode: dict, gold: list[dict]) -> bool:
+    """True when the agent opened a file that holds an edited function."""
+    wanted = {g["path"] for g in gold if g["kind"] != "added" and g["qualname"] != patch_tools.MODULE}
+    opened = set()
+    for call in episode.get("tool_calls", []):
+        if call.get("name") == "read_file":
+            try:
+                opened.add(json.loads(call.get("arguments") or "{}").get("filepath"))
+            except json.JSONDecodeError:
+                pass
+    return bool(wanted & opened)
+
+
+def graph_calls(episode: dict) -> tuple[int, int]:
+    calls = episode.get("tool_calls", [])
+    return sum(c.get("name") != "read_file" for c in calls), len(calls)
+
+
 def sign_test(wins: int, losses: int) -> float:
     n = wins + losses
     if n == 0:
@@ -42,7 +60,8 @@ def main() -> None:
     shared = sorted(set.intersection(*(set(r) for r in runs.values())))
     rows: dict[str, dict[str, list[bool]]] = {}
     for name, episodes in runs.items():
-        metrics: dict[str, list[bool]] = {"func@1": [], "func@5": [], "file@5": [], "surfaced": [], "empty": []}
+        metrics: dict[str, list[bool]] = {"func@1": [], "func@5": [], "file@5": [], "surfaced": [], "read_gold_file": [], "empty": []}
+        graph_total = all_total = 0
         for instance in shared:
             gold, _ = load_gold(tasks[instance], dataset)
             if not any(g["kind"] != "added" and g["qualname"] != patch_tools.MODULE for g in gold):
@@ -53,15 +72,19 @@ def main() -> None:
             metrics["func@5"].append(hits["function"][5])
             metrics["file@5"].append(hits.get("file", {}).get(5, False))
             metrics["surfaced"].append(surfaced(episode, gold))
+            metrics["read_gold_file"].append(read_gold_file(episode, gold))
             metrics["empty"].append(not episode["predictions"])
+            graph, total = graph_calls(episode)
+            graph_total, all_total = graph_total + graph, all_total + total
         rows[name] = metrics
+        print(f"{name}: {all_total} tool calls, {graph_total} graph calls ({graph_total / max(all_total, 1):.1%})")
     n = len(next(iter(rows.values()))["func@1"])
     print(f"{len(shared)} shared tasks, {n} with a modified gold function")
     for name, metrics in rows.items():
         print(name, {k: round(float(np.mean(v)), 3) for k, v in metrics.items()})
     names = list(rows)
     for other in names[1:]:
-        for metric in ("func@5", "file@5", "surfaced"):
+        for metric in ("func@1", "func@5", "file@5", "surfaced", "read_gold_file"):
             a, b = np.array(rows[names[0]][metric]), np.array(rows[other][metric])
             wins, losses = int((b & ~a).sum()), int((a & ~b).sum())
             print(f"{other} vs {names[0]} {metric}: +{wins} / -{losses}, sign test p={sign_test(wins, losses):.3f}")

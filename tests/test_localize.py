@@ -17,6 +17,14 @@ def test_resolve_node_name_precedence():
     assert resolve_node_name("missing", graph) is None
 
 
+def test_resolve_node_name_accepts_locations():
+    graph = nx.MultiDiGraph()
+    graph.add_nodes_from(["pkg.mod.Class.method", "pkg.helper", "pkg"])
+    assert resolve_node_name("src/pkg/mod.py::Class.method", graph) == "pkg.mod.Class.method"
+    assert resolve_node_name("pkg/__init__.py::helper", graph) == "pkg.helper"
+    assert resolve_node_name("pkg/mod.py::Class.missing", graph) is None
+
+
 def test_parse_answer_json_and_fallback():
     assert parse_answer('Sure: ["a.py::f", "b.py::C.m"]') == ["a.py::f", "b.py::C.m"]
     assert parse_answer("try a/b.py::C.m then c.py::g") == ["a/b.py::C.m", "c.py::g"]
