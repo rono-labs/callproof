@@ -23,6 +23,19 @@ Other findings from the audit:
 - No `async def` function and no module has a node in the provided graphs.
 - Walking 3 hops from the failing test, undirected Callproof graphs reach more edited functions than the provided graphs (55.7% vs 31.3%, macro over 33 tasks) but read more nodes to do it. Following only outgoing `calls` edges matches two provided hops (25.4% vs 25.0%) while reading 36 nodes instead of 113 ([`results/audit/EXTRA.md`](results/audit/EXTRA.md)).
 
+## CallproofLP benchmark
+
+7,362 traced caller to callee pairs over 105 commits, in provided node ids, with a repository split (train rich, requests, httpx; test fastapi) and a commit split. The hard subset holds test pairs the provided graph does not link. Labels and the data card are in [`results/linkpred/`](results/linkpred/README.md).
+
+| Macro MRR, hard subset | Repo split | Commit split |
+|---|---|---|
+| Provided adjacency | .008 | .003 |
+| GraphSAGE on provided graph + embeddings | .013 | .067 |
+| LightGBM, 9 pair features | .388 | **.636** |
+| Callproof static `calls` (no training) | **.450** | .532 |
+
+Full tables, including logistic regression and GraphSAGE with pair features: [`results/linkpred/RESULTS.md`](results/linkpred/RESULTS.md).
+
 A negative result is reported too: plain BM25 and PageRank localization do not improve with the better graph ([`results/loc/baselines_eval.txt`](results/loc/baselines_eval.txt)).
 
 ## What it does
@@ -103,7 +116,14 @@ Run everything from the repository root. Developed on Linux. The ground-truth st
    python -m callproof.localize_eval results/loc/base_bm25_provided_notests results/loc/ppr_callproof_notests
    ```
 
-6. Agent runs with Gemma 4 on CPU. Build [llama.cpp](https://github.com/ggml-org/llama.cpp) and download the Gemma 4 E4B `q4_0` GGUF (`gemma-4-E4B_q4_0-it.gguf`) into `~/.cache/callproof/models` (or set `CALLPROOF_MODELS`; the E2B file is `gemma-4-E2B_q4_0-it.gguf`). Point `LLAMA_SERVER` at the `llama-server` binary if it is not on `PATH`:
+6. CallproofLP labels and baselines (needs steps 3 and 4; the learned baselines need `uv pip install lightgbm torch`):
+
+   ```bash
+   python scripts/linkpred.py build && python scripts/linkpred.py eval
+   python scripts/linkpred_learned.py
+   ```
+
+7. Agent runs with Gemma 4 on CPU. Build [llama.cpp](https://github.com/ggml-org/llama.cpp) and download the Gemma 4 E4B `q4_0` GGUF (`gemma-4-E4B_q4_0-it.gguf`) into `~/.cache/callproof/models` (or set `CALLPROOF_MODELS`; the E2B file is `gemma-4-E2B_q4_0-it.gguf`). Point `LLAMA_SERVER` at the `llama-server` binary if it is not on `PATH`:
 
    ```bash
    python scripts/run_localize.py --run-name e4b_graph_provided --model e4b --tools graph \
@@ -134,15 +154,16 @@ callproof/          package
   retrieve.py         BM25, dense and PageRank baselines
   agent.py            llama-server client and the localization agent loop
   localize_eval.py    scoring of localization runs
-scripts/            groundtruth.py, audit_static.py, run_localize.py
+scripts/            groundtruth.py, audit_static.py, linkpred.py, linkpred_learned.py, run_localize.py, agent_paired.py
 tests/              unit tests
-results/            ground truth, audit tables, localization scores
+results/            per-task ground truth, audit tables, CallproofLP labels and baselines, localization scores
+docs/               figures and the paper as PDF
 requirements-test.txt  pinned extra packages for the traced test suites
 ```
 
 ## Built with
 
-Python, `networkx`, `numpy`, `uv`, `pytest`, `llama.cpp`, and Gemma 4 E2B and E4B for the localization runs. Data and wheels are from the Gemma 4 Developer Agent competition on Kaggle.
+Python, `networkx`, `numpy`, `uv`, `pytest`, LightGBM and PyTorch for the learned baselines, `llama.cpp`, and Gemma 4 E2B and E4B for the localization runs. Data and wheels are from the Gemma 4 Developer Agent competition on Kaggle.
 
 ## License
 

@@ -1,0 +1,9 @@
+{"run": "base_bm25_provided", "episodes": 129, "gold_source": {"groundtruth": 129}, "function": {"n": 119, "acc@1": 0.1092, "acc@5": 0.2857}, "file": {"n": 126, "acc@1": 0.2302, "acc@5": 0.4206}}
+{"run": "base_ppr_provided", "episodes": 129, "gold_source": {"groundtruth": 129}, "function": {"n": 119, "acc@1": 0.1176, "acc@5": 0.2857}, "file": {"n": 126, "acc@1": 0.254, "acc@5": 0.4683}}
+{"run": "ppr_callproof", "episodes": 129, "gold_source": {"groundtruth": 129}, "function": {"n": 119, "acc@1": 0.084, "acc@5": 0.2521}, "file": {"n": 126, "acc@1": 0.2143, "acc@5": 0.4683}}
+{"run": "base_bm25_provided_notests", "episodes": 129, "gold_source": {"groundtruth": 129}, "function": {"n": 119, "acc@1": 0.1345, "acc@5": 0.3866}, "file": {"n": 126, "acc@1": 0.3016, "acc@5": 0.6349}}
+{"run": "base_ppr_provided_notests", "episodes": 129, "gold_source": {"groundtruth": 129}, "function": {"n": 119, "acc@1": 0.1345, "acc@5": 0.3277}, "file": {"n": 126, "acc@1": 0.3413, "acc@5": 0.5556}}
+{"run": "ppr_callproof_notests", "episodes": 129, "gold_source": {"groundtruth": 129}, "function": {"n": 119, "acc@1": 0.0924, "acc@5": 0.3277}, "file": {"n": 126, "acc@1": 0.3651, "acc@5": 0.5556}}
+{"run": "bm25_callproof_notests", "episodes": 129, "gold_source": {"groundtruth": 129}, "function": {"n": 119, "acc@1": 0.1176, "acc@5": 0.395}, "file": {"n": 126, "acc@1": 0.3175, "acc@5": 0.6111}}
+{"run": "ppr_cp_calls_notests", "episodes": 129, "gold_source": {"groundtruth": 129}, "function": {"n": 119, "acc@1": 0.1092, "acc@5": 0.3193}, "file": {"n": 126, "acc@1": 0.3413, "acc@5": 0.5476}}
+{"run": "ppr_cp_cic_notests", "episodes": 129, "gold_source": {"groundtruth": 129}, "function": {"n": 119, "acc@1": 0.1176, "acc@5": 0.3277}, "file": {"n": 126, "acc@1": 0.3492, "acc@5": 0.5476}}

@@ -1,0 +1,15 @@
+kind,graph,recall,ci_low,ci_high,edges,tasks
+all,prov,0.259,0.2271,0.298,9576,114
+all,ours,0.7926,0.7388,0.8363,9576,114
+self_method,prov,0.0,0.0,0.0,2459,86
+self_method,ours,0.928,0.9097,0.942,2459,86
+constructor,prov,0.0,0.0,0.0,1093,99
+constructor,ours,0.7429,0.6071,0.853,1093,99
+module_function,prov,0.7432,0.7174,0.7689,3034,105
+module_function,ours,0.9361,0.9219,0.9487,3034,105
+cross_module,prov,0.3191,0.2847,0.3634,4970,113
+cross_module,ours,0.7193,0.6486,0.7777,4970,113
+async,prov,0.0,0.0,0.0,409,38
+async,ours,0.7237,0.6515,0.8005,409,38
+nested,prov,0.1746,0.1455,0.2066,819,90
+nested,ours,0.6032,0.5358,0.6758,819,90

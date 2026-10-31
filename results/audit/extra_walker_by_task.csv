@@ -1,0 +1,1429 @@
+instance_id,variant,budget,hit,listed,gold_in_graph,seed_nodes
+fastapi_11194,provided,0,False,3,False,3
+fastapi_11194,provided,5,False,17,False,3
+fastapi_11194,provided,10,False,32,False,3
+fastapi_11194,provided,20,False,32,False,3
+fastapi_11194,callproof all edges,0,False,3,True,3
+fastapi_11194,callproof all edges,5,False,116,True,3
+fastapi_11194,callproof all edges,10,False,123,True,3
+fastapi_11194,callproof all edges,20,False,150,True,3
+fastapi_11194,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_11194,callproof calls+contains+inherits,5,False,69,True,3
+fastapi_11194,callproof calls+contains+inherits,10,False,82,True,3
+fastapi_11194,callproof calls+contains+inherits,20,False,112,True,3
+fastapi_11355,provided,0,False,3,True,3
+fastapi_11355,provided,5,False,70,True,3
+fastapi_11355,provided,10,False,83,True,3
+fastapi_11355,provided,20,False,84,True,3
+fastapi_11355,callproof all edges,0,False,3,True,3
+fastapi_11355,callproof all edges,5,False,85,True,3
+fastapi_11355,callproof all edges,10,False,93,True,3
+fastapi_11355,callproof all edges,20,False,104,True,3
+fastapi_11355,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_11355,callproof calls+contains+inherits,5,False,76,True,3
+fastapi_11355,callproof calls+contains+inherits,10,False,86,True,3
+fastapi_11355,callproof calls+contains+inherits,20,False,101,True,3
+fastapi_12942,provided,0,False,3,True,3
+fastapi_12942,provided,5,False,16,True,3
+fastapi_12942,provided,10,False,32,True,3
+fastapi_12942,provided,20,False,42,True,3
+fastapi_12942,callproof all edges,0,False,3,True,3
+fastapi_12942,callproof all edges,5,False,126,True,3
+fastapi_12942,callproof all edges,10,False,133,True,3
+fastapi_12942,callproof all edges,20,False,160,True,3
+fastapi_12942,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_12942,callproof calls+contains+inherits,5,False,72,True,3
+fastapi_12942,callproof calls+contains+inherits,10,False,85,True,3
+fastapi_12942,callproof calls+contains+inherits,20,False,117,True,3
+fastapi_13207,provided,0,True,3,True,3
+fastapi_13207,provided,5,True,9,True,3
+fastapi_13207,provided,10,True,79,True,3
+fastapi_13207,provided,20,True,81,True,3
+fastapi_13207,callproof all edges,0,True,3,True,3
+fastapi_13207,callproof all edges,5,True,53,True,3
+fastapi_13207,callproof all edges,10,True,92,True,3
+fastapi_13207,callproof all edges,20,True,181,True,3
+fastapi_13207,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_13207,callproof calls+contains+inherits,5,True,32,True,3
+fastapi_13207,callproof calls+contains+inherits,10,True,70,True,3
+fastapi_13207,callproof calls+contains+inherits,20,True,135,True,3
+fastapi_13537,provided,0,False,3,False,3
+fastapi_13537,provided,5,False,26,False,3
+fastapi_13537,provided,10,False,34,False,3
+fastapi_13537,provided,20,False,50,False,3
+fastapi_13537,callproof all edges,0,False,3,True,3
+fastapi_13537,callproof all edges,5,True,62,True,3
+fastapi_13537,callproof all edges,10,True,109,True,3
+fastapi_13537,callproof all edges,20,True,175,True,3
+fastapi_13537,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_13537,callproof calls+contains+inherits,5,True,38,True,3
+fastapi_13537,callproof calls+contains+inherits,10,True,65,True,3
+fastapi_13537,callproof calls+contains+inherits,20,True,113,True,3
+fastapi_13713,provided,0,True,3,True,3
+fastapi_13713,provided,5,True,73,True,3
+fastapi_13713,provided,10,True,90,True,3
+fastapi_13713,provided,20,True,91,True,3
+fastapi_13713,callproof all edges,0,True,3,True,3
+fastapi_13713,callproof all edges,5,True,88,True,3
+fastapi_13713,callproof all edges,10,True,96,True,3
+fastapi_13713,callproof all edges,20,True,107,True,3
+fastapi_13713,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_13713,callproof calls+contains+inherits,5,True,81,True,3
+fastapi_13713,callproof calls+contains+inherits,10,True,91,True,3
+fastapi_13713,callproof calls+contains+inherits,20,True,106,True,3
+fastapi_13786,provided,0,False,3,True,3
+fastapi_13786,provided,5,False,70,True,3
+fastapi_13786,provided,10,False,83,True,3
+fastapi_13786,provided,20,False,84,True,3
+fastapi_13786,callproof all edges,0,False,3,True,3
+fastapi_13786,callproof all edges,5,False,85,True,3
+fastapi_13786,callproof all edges,10,False,93,True,3
+fastapi_13786,callproof all edges,20,False,104,True,3
+fastapi_13786,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_13786,callproof calls+contains+inherits,5,False,78,True,3
+fastapi_13786,callproof calls+contains+inherits,10,False,88,True,3
+fastapi_13786,callproof calls+contains+inherits,20,False,103,True,3
+fastapi_13920,provided,0,False,4,True,4
+fastapi_13920,provided,5,False,60,True,4
+fastapi_13920,provided,10,False,62,True,4
+fastapi_13920,provided,20,False,64,True,4
+fastapi_13920,callproof all edges,0,False,4,True,4
+fastapi_13920,callproof all edges,5,False,71,True,4
+fastapi_13920,callproof all edges,10,False,120,True,4
+fastapi_13920,callproof all edges,20,False,144,True,4
+fastapi_13920,callproof calls+contains+inherits,0,False,4,True,4
+fastapi_13920,callproof calls+contains+inherits,5,False,67,True,4
+fastapi_13920,callproof calls+contains+inherits,10,False,118,True,4
+fastapi_13920,callproof calls+contains+inherits,20,False,150,True,4
+fastapi_14077,provided,0,False,3,True,3
+fastapi_14077,provided,5,False,73,True,3
+fastapi_14077,provided,10,False,86,True,3
+fastapi_14077,provided,20,False,87,True,3
+fastapi_14077,callproof all edges,0,False,3,True,3
+fastapi_14077,callproof all edges,5,False,109,True,3
+fastapi_14077,callproof all edges,10,False,119,True,3
+fastapi_14077,callproof all edges,20,False,138,True,3
+fastapi_14077,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14077,callproof calls+contains+inherits,5,False,108,True,3
+fastapi_14077,callproof calls+contains+inherits,10,False,118,True,3
+fastapi_14077,callproof calls+contains+inherits,20,False,133,True,3
+fastapi_14099,provided,0,True,3,True,3
+fastapi_14099,provided,5,True,18,True,3
+fastapi_14099,provided,10,True,52,True,3
+fastapi_14099,provided,20,True,61,True,3
+fastapi_14099,callproof all edges,0,True,5,True,5
+fastapi_14099,callproof all edges,5,True,22,True,5
+fastapi_14099,callproof all edges,10,True,100,True,5
+fastapi_14099,callproof all edges,20,True,146,True,5
+fastapi_14099,callproof calls+contains+inherits,0,True,5,True,5
+fastapi_14099,callproof calls+contains+inherits,5,True,19,True,5
+fastapi_14099,callproof calls+contains+inherits,10,True,54,True,5
+fastapi_14099,callproof calls+contains+inherits,20,True,71,True,5
+fastapi_14186,provided,0,False,3,True,3
+fastapi_14186,provided,5,True,67,True,3
+fastapi_14186,provided,10,True,97,True,3
+fastapi_14186,provided,20,True,107,True,3
+fastapi_14186,callproof all edges,0,False,3,True,3
+fastapi_14186,callproof all edges,5,True,110,True,3
+fastapi_14186,callproof all edges,10,True,121,True,3
+fastapi_14186,callproof all edges,20,True,138,True,3
+fastapi_14186,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14186,callproof calls+contains+inherits,5,True,106,True,3
+fastapi_14186,callproof calls+contains+inherits,10,True,117,True,3
+fastapi_14186,callproof calls+contains+inherits,20,True,131,True,3
+fastapi_14246,provided,0,False,3,True,3
+fastapi_14246,provided,5,False,36,True,3
+fastapi_14246,provided,10,False,78,True,3
+fastapi_14246,provided,20,False,79,True,3
+fastapi_14246,callproof all edges,0,False,3,True,3
+fastapi_14246,callproof all edges,5,True,116,True,3
+fastapi_14246,callproof all edges,10,True,132,True,3
+fastapi_14246,callproof all edges,20,True,241,True,3
+fastapi_14246,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14246,callproof calls+contains+inherits,5,True,88,True,3
+fastapi_14246,callproof calls+contains+inherits,10,True,100,True,3
+fastapi_14246,callproof calls+contains+inherits,20,True,193,True,3
+fastapi_14258,provided,0,False,3,True,3
+fastapi_14258,provided,5,False,12,True,3
+fastapi_14258,provided,10,False,14,True,3
+fastapi_14258,provided,20,False,15,True,3
+fastapi_14258,callproof all edges,0,False,3,True,3
+fastapi_14258,callproof all edges,5,False,39,True,3
+fastapi_14258,callproof all edges,10,False,39,True,3
+fastapi_14258,callproof all edges,20,False,69,True,3
+fastapi_14258,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14258,callproof calls+contains+inherits,5,False,39,True,3
+fastapi_14258,callproof calls+contains+inherits,10,False,49,True,3
+fastapi_14258,callproof calls+contains+inherits,20,False,69,True,3
+fastapi_14262,provided,0,True,3,True,3
+fastapi_14262,provided,5,True,57,True,3
+fastapi_14262,provided,10,True,71,True,3
+fastapi_14262,provided,20,True,72,True,3
+fastapi_14262,callproof all edges,0,True,5,True,5
+fastapi_14262,callproof all edges,5,True,54,True,5
+fastapi_14262,callproof all edges,10,True,127,True,5
+fastapi_14262,callproof all edges,20,True,258,True,5
+fastapi_14262,callproof calls+contains+inherits,0,True,5,True,5
+fastapi_14262,callproof calls+contains+inherits,5,True,48,True,5
+fastapi_14262,callproof calls+contains+inherits,10,True,143,True,5
+fastapi_14262,callproof calls+contains+inherits,20,True,224,True,5
+fastapi_14266,provided,0,False,3,True,3
+fastapi_14266,provided,5,False,70,True,3
+fastapi_14266,provided,10,False,83,True,3
+fastapi_14266,provided,20,False,84,True,3
+fastapi_14266,callproof all edges,0,False,3,True,3
+fastapi_14266,callproof all edges,5,False,111,True,3
+fastapi_14266,callproof all edges,10,False,121,True,3
+fastapi_14266,callproof all edges,20,False,140,True,3
+fastapi_14266,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14266,callproof calls+contains+inherits,5,False,110,True,3
+fastapi_14266,callproof calls+contains+inherits,10,False,120,True,3
+fastapi_14266,callproof calls+contains+inherits,20,False,135,True,3
+fastapi_14297,provided,0,False,3,True,3
+fastapi_14297,provided,5,False,70,True,3
+fastapi_14297,provided,10,False,83,True,3
+fastapi_14297,provided,20,False,84,True,3
+fastapi_14297,callproof all edges,0,False,3,True,3
+fastapi_14297,callproof all edges,5,False,112,True,3
+fastapi_14297,callproof all edges,10,False,122,True,3
+fastapi_14297,callproof all edges,20,False,141,True,3
+fastapi_14297,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14297,callproof calls+contains+inherits,5,False,111,True,3
+fastapi_14297,callproof calls+contains+inherits,10,False,121,True,3
+fastapi_14297,callproof calls+contains+inherits,20,False,136,True,3
+fastapi_14301,provided,0,True,3,True,3
+fastapi_14301,provided,5,True,17,True,3
+fastapi_14301,provided,10,True,31,True,3
+fastapi_14301,provided,20,True,74,True,3
+fastapi_14301,callproof all edges,0,True,3,True,3
+fastapi_14301,callproof all edges,5,True,80,True,3
+fastapi_14301,callproof all edges,10,True,121,True,3
+fastapi_14301,callproof all edges,20,True,192,True,3
+fastapi_14301,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_14301,callproof calls+contains+inherits,5,True,72,True,3
+fastapi_14301,callproof calls+contains+inherits,10,True,89,True,3
+fastapi_14301,callproof calls+contains+inherits,20,True,138,True,3
+fastapi_14303,provided,0,False,3,False,3
+fastapi_14303,provided,5,False,14,False,3
+fastapi_14303,provided,10,False,40,False,3
+fastapi_14303,provided,20,False,93,False,3
+fastapi_14303,callproof all edges,0,False,3,True,3
+fastapi_14303,callproof all edges,5,False,80,True,3
+fastapi_14303,callproof all edges,10,True,154,True,3
+fastapi_14303,callproof all edges,20,True,205,True,3
+fastapi_14303,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14303,callproof calls+contains+inherits,5,False,52,True,3
+fastapi_14303,callproof calls+contains+inherits,10,True,83,True,3
+fastapi_14303,callproof calls+contains+inherits,20,True,121,True,3
+fastapi_14306,provided,0,True,3,True,3
+fastapi_14306,provided,5,True,32,True,3
+fastapi_14306,provided,10,True,41,True,3
+fastapi_14306,provided,20,True,81,True,3
+fastapi_14306,callproof all edges,0,True,4,True,4
+fastapi_14306,callproof all edges,5,True,69,True,4
+fastapi_14306,callproof all edges,10,True,126,True,4
+fastapi_14306,callproof all edges,20,True,155,True,4
+fastapi_14306,callproof calls+contains+inherits,0,True,4,True,4
+fastapi_14306,callproof calls+contains+inherits,5,True,56,True,4
+fastapi_14306,callproof calls+contains+inherits,10,True,86,True,4
+fastapi_14306,callproof calls+contains+inherits,20,True,103,True,4
+fastapi_14349,provided,0,False,4,True,4
+fastapi_14349,provided,5,False,10,True,4
+fastapi_14349,provided,10,False,80,True,4
+fastapi_14349,provided,20,False,81,True,4
+fastapi_14349,callproof all edges,0,False,4,True,4
+fastapi_14349,callproof all edges,5,False,33,True,4
+fastapi_14349,callproof all edges,10,True,135,True,4
+fastapi_14349,callproof all edges,20,True,148,True,4
+fastapi_14349,callproof calls+contains+inherits,0,False,4,True,4
+fastapi_14349,callproof calls+contains+inherits,5,False,21,True,4
+fastapi_14349,callproof calls+contains+inherits,10,True,106,True,4
+fastapi_14349,callproof calls+contains+inherits,20,True,170,True,4
+fastapi_14356,provided,0,False,3,True,3
+fastapi_14356,provided,5,False,70,True,3
+fastapi_14356,provided,10,False,83,True,3
+fastapi_14356,provided,20,False,84,True,3
+fastapi_14356,callproof all edges,0,False,3,True,3
+fastapi_14356,callproof all edges,5,False,83,True,3
+fastapi_14356,callproof all edges,10,False,122,True,3
+fastapi_14356,callproof all edges,20,False,188,True,3
+fastapi_14356,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14356,callproof calls+contains+inherits,5,False,75,True,3
+fastapi_14356,callproof calls+contains+inherits,10,False,143,True,3
+fastapi_14356,callproof calls+contains+inherits,20,False,231,True,3
+fastapi_14360,provided,0,True,3,True,3
+fastapi_14360,provided,5,True,26,True,3
+fastapi_14360,provided,10,True,44,True,3
+fastapi_14360,provided,20,True,60,True,3
+fastapi_14360,callproof all edges,0,True,3,True,3
+fastapi_14360,callproof all edges,5,True,114,True,3
+fastapi_14360,callproof all edges,10,True,171,True,3
+fastapi_14360,callproof all edges,20,True,214,True,3
+fastapi_14360,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_14360,callproof calls+contains+inherits,5,True,66,True,3
+fastapi_14360,callproof calls+contains+inherits,10,True,102,True,3
+fastapi_14360,callproof calls+contains+inherits,20,True,135,True,3
+fastapi_14361,provided,0,False,3,True,3
+fastapi_14361,provided,5,True,10,True,3
+fastapi_14361,provided,10,True,10,True,3
+fastapi_14361,provided,20,True,10,True,3
+fastapi_14361,callproof all edges,0,False,3,True,3
+fastapi_14361,callproof all edges,5,True,60,True,3
+fastapi_14361,callproof all edges,10,True,83,True,3
+fastapi_14361,callproof all edges,20,True,114,True,3
+fastapi_14361,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14361,callproof calls+contains+inherits,5,True,37,True,3
+fastapi_14361,callproof calls+contains+inherits,10,True,61,True,3
+fastapi_14361,callproof calls+contains+inherits,20,True,78,True,3
+fastapi_14371,provided,0,False,3,True,3
+fastapi_14371,provided,5,True,22,True,3
+fastapi_14371,provided,10,True,38,True,3
+fastapi_14371,provided,20,True,47,True,3
+fastapi_14371,callproof all edges,0,False,3,True,3
+fastapi_14371,callproof all edges,5,True,142,True,3
+fastapi_14371,callproof all edges,10,True,149,True,3
+fastapi_14371,callproof all edges,20,True,176,True,3
+fastapi_14371,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14371,callproof calls+contains+inherits,5,True,88,True,3
+fastapi_14371,callproof calls+contains+inherits,10,True,101,True,3
+fastapi_14371,callproof calls+contains+inherits,20,True,125,True,3
+fastapi_14372,provided,0,False,3,True,3
+fastapi_14372,provided,5,True,73,True,3
+fastapi_14372,provided,10,True,93,True,3
+fastapi_14372,provided,20,True,93,True,3
+fastapi_14372,callproof all edges,0,False,3,True,3
+fastapi_14372,callproof all edges,5,True,106,True,3
+fastapi_14372,callproof all edges,10,True,116,True,3
+fastapi_14372,callproof all edges,20,True,135,True,3
+fastapi_14372,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14372,callproof calls+contains+inherits,5,True,101,True,3
+fastapi_14372,callproof calls+contains+inherits,10,True,111,True,3
+fastapi_14372,callproof calls+contains+inherits,20,True,126,True,3
+fastapi_14419,provided,0,True,3,True,3
+fastapi_14419,provided,5,True,22,True,3
+fastapi_14419,provided,10,True,64,True,3
+fastapi_14419,provided,20,True,85,True,3
+fastapi_14419,callproof all edges,0,True,3,True,3
+fastapi_14419,callproof all edges,5,True,163,True,3
+fastapi_14419,callproof all edges,10,True,206,True,3
+fastapi_14419,callproof all edges,20,True,239,True,3
+fastapi_14419,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_14419,callproof calls+contains+inherits,5,True,125,True,3
+fastapi_14419,callproof calls+contains+inherits,10,True,150,True,3
+fastapi_14419,callproof calls+contains+inherits,20,True,179,True,3
+fastapi_14430,provided,0,False,3,True,3
+fastapi_14430,provided,5,False,70,True,3
+fastapi_14430,provided,10,False,83,True,3
+fastapi_14430,provided,20,False,84,True,3
+fastapi_14430,callproof all edges,0,False,3,True,3
+fastapi_14430,callproof all edges,5,False,85,True,3
+fastapi_14430,callproof all edges,10,False,93,True,3
+fastapi_14430,callproof all edges,20,False,104,True,3
+fastapi_14430,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14430,callproof calls+contains+inherits,5,False,76,True,3
+fastapi_14430,callproof calls+contains+inherits,10,False,86,True,3
+fastapi_14430,callproof calls+contains+inherits,20,False,101,True,3
+fastapi_14448,provided,0,False,3,True,3
+fastapi_14448,provided,5,False,57,True,3
+fastapi_14448,provided,10,False,72,True,3
+fastapi_14448,provided,20,False,73,True,3
+fastapi_14448,callproof all edges,0,False,5,True,5
+fastapi_14448,callproof all edges,5,False,60,True,5
+fastapi_14448,callproof all edges,10,False,109,True,5
+fastapi_14448,callproof all edges,20,False,143,True,5
+fastapi_14448,callproof calls+contains+inherits,0,False,5,True,5
+fastapi_14448,callproof calls+contains+inherits,5,False,59,True,5
+fastapi_14448,callproof calls+contains+inherits,10,False,111,True,5
+fastapi_14448,callproof calls+contains+inherits,20,False,141,True,5
+fastapi_14455,provided,0,False,3,True,3
+fastapi_14455,provided,5,False,10,True,3
+fastapi_14455,provided,10,False,34,True,3
+fastapi_14455,provided,20,False,36,True,3
+fastapi_14455,callproof all edges,0,False,3,True,3
+fastapi_14455,callproof all edges,5,False,91,True,3
+fastapi_14455,callproof all edges,10,False,159,True,3
+fastapi_14455,callproof all edges,20,False,236,True,3
+fastapi_14455,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14455,callproof calls+contains+inherits,5,False,78,True,3
+fastapi_14455,callproof calls+contains+inherits,10,False,145,True,3
+fastapi_14455,callproof calls+contains+inherits,20,False,209,True,3
+fastapi_14458,provided,0,True,3,True,3
+fastapi_14458,provided,5,True,17,True,3
+fastapi_14458,provided,10,True,18,True,3
+fastapi_14458,provided,20,True,28,True,3
+fastapi_14458,callproof all edges,0,True,3,True,3
+fastapi_14458,callproof all edges,5,True,73,True,3
+fastapi_14458,callproof all edges,10,True,94,True,3
+fastapi_14458,callproof all edges,20,True,131,True,3
+fastapi_14458,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_14458,callproof calls+contains+inherits,5,True,70,True,3
+fastapi_14458,callproof calls+contains+inherits,10,True,89,True,3
+fastapi_14458,callproof calls+contains+inherits,20,True,120,True,3
+fastapi_14459,provided,0,False,3,True,3
+fastapi_14459,provided,5,False,10,True,3
+fastapi_14459,provided,10,False,34,True,3
+fastapi_14459,provided,20,False,36,True,3
+fastapi_14459,callproof all edges,0,False,3,True,3
+fastapi_14459,callproof all edges,5,False,92,True,3
+fastapi_14459,callproof all edges,10,True,160,True,3
+fastapi_14459,callproof all edges,20,True,237,True,3
+fastapi_14459,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14459,callproof calls+contains+inherits,5,False,79,True,3
+fastapi_14459,callproof calls+contains+inherits,10,False,146,True,3
+fastapi_14459,callproof calls+contains+inherits,20,False,210,True,3
+fastapi_14463,provided,0,False,3,True,3
+fastapi_14463,provided,5,False,70,True,3
+fastapi_14463,provided,10,False,83,True,3
+fastapi_14463,provided,20,False,84,True,3
+fastapi_14463,callproof all edges,0,False,3,True,3
+fastapi_14463,callproof all edges,5,False,76,True,3
+fastapi_14463,callproof all edges,10,False,88,True,3
+fastapi_14463,callproof all edges,20,False,107,True,3
+fastapi_14463,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14463,callproof calls+contains+inherits,5,False,69,True,3
+fastapi_14463,callproof calls+contains+inherits,10,False,80,True,3
+fastapi_14463,callproof calls+contains+inherits,20,False,99,True,3
+fastapi_14479,provided,0,True,3,True,3
+fastapi_14479,provided,5,True,32,True,3
+fastapi_14479,provided,10,True,43,True,3
+fastapi_14479,provided,20,True,89,True,3
+fastapi_14479,callproof all edges,0,True,3,True,3
+fastapi_14479,callproof all edges,5,True,72,True,3
+fastapi_14479,callproof all edges,10,True,80,True,3
+fastapi_14479,callproof all edges,20,True,117,True,3
+fastapi_14479,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_14479,callproof calls+contains+inherits,5,True,54,True,3
+fastapi_14479,callproof calls+contains+inherits,10,True,65,True,3
+fastapi_14479,callproof calls+contains+inherits,20,True,92,True,3
+fastapi_14482,provided,0,False,3,True,3
+fastapi_14482,provided,5,False,75,True,3
+fastapi_14482,provided,10,False,99,True,3
+fastapi_14482,provided,20,False,100,True,3
+fastapi_14482,callproof all edges,0,False,3,True,3
+fastapi_14482,callproof all edges,5,False,69,True,3
+fastapi_14482,callproof all edges,10,False,73,True,3
+fastapi_14482,callproof all edges,20,False,75,True,3
+fastapi_14482,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14482,callproof calls+contains+inherits,5,False,69,True,3
+fastapi_14482,callproof calls+contains+inherits,10,False,79,True,3
+fastapi_14482,callproof calls+contains+inherits,20,False,100,True,3
+fastapi_14485,provided,0,False,3,True,3
+fastapi_14485,provided,5,False,72,True,3
+fastapi_14485,provided,10,True,108,True,3
+fastapi_14485,provided,20,True,108,True,3
+fastapi_14485,callproof all edges,0,False,3,True,3
+fastapi_14485,callproof all edges,5,False,98,True,3
+fastapi_14485,callproof all edges,10,False,150,True,3
+fastapi_14485,callproof all edges,20,False,195,True,3
+fastapi_14485,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14485,callproof calls+contains+inherits,5,False,81,True,3
+fastapi_14485,callproof calls+contains+inherits,10,False,153,True,3
+fastapi_14485,callproof calls+contains+inherits,20,False,264,True,3
+fastapi_14487,provided,0,False,3,False,3
+fastapi_14487,provided,5,False,70,False,3
+fastapi_14487,provided,10,False,83,False,3
+fastapi_14487,provided,20,False,84,False,3
+fastapi_14487,callproof all edges,0,False,3,True,3
+fastapi_14487,callproof all edges,5,False,81,True,3
+fastapi_14487,callproof all edges,10,False,149,True,3
+fastapi_14487,callproof all edges,20,False,300,True,3
+fastapi_14487,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14487,callproof calls+contains+inherits,5,False,61,True,3
+fastapi_14487,callproof calls+contains+inherits,10,False,122,True,3
+fastapi_14487,callproof calls+contains+inherits,20,False,271,True,3
+fastapi_14512,provided,0,False,3,True,3
+fastapi_14512,provided,5,False,44,True,3
+fastapi_14512,provided,10,False,99,True,3
+fastapi_14512,provided,20,False,102,True,3
+fastapi_14512,callproof all edges,0,False,3,True,3
+fastapi_14512,callproof all edges,5,False,115,True,3
+fastapi_14512,callproof all edges,10,False,122,True,3
+fastapi_14512,callproof all edges,20,False,149,True,3
+fastapi_14512,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14512,callproof calls+contains+inherits,5,False,94,True,3
+fastapi_14512,callproof calls+contains+inherits,10,False,107,True,3
+fastapi_14512,callproof calls+contains+inherits,20,False,131,True,3
+fastapi_14583,provided,0,False,3,True,3
+fastapi_14583,provided,5,False,22,True,3
+fastapi_14583,provided,10,False,22,True,3
+fastapi_14583,provided,20,True,36,True,3
+fastapi_14583,callproof all edges,0,False,3,True,3
+fastapi_14583,callproof all edges,5,False,29,True,3
+fastapi_14583,callproof all edges,10,False,71,True,3
+fastapi_14583,callproof all edges,20,False,97,True,3
+fastapi_14583,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14583,callproof calls+contains+inherits,5,False,25,True,3
+fastapi_14583,callproof calls+contains+inherits,10,False,64,True,3
+fastapi_14583,callproof calls+contains+inherits,20,False,68,True,3
+fastapi_14605,provided,0,True,4,True,4
+fastapi_14605,provided,5,True,56,True,4
+fastapi_14605,provided,10,True,86,True,4
+fastapi_14605,provided,20,True,87,True,4
+fastapi_14605,callproof all edges,0,True,4,True,4
+fastapi_14605,callproof all edges,5,True,45,True,4
+fastapi_14605,callproof all edges,10,True,48,True,4
+fastapi_14605,callproof all edges,20,True,143,True,4
+fastapi_14605,callproof calls+contains+inherits,0,True,4,True,4
+fastapi_14605,callproof calls+contains+inherits,5,True,28,True,4
+fastapi_14605,callproof calls+contains+inherits,10,True,100,True,4
+fastapi_14605,callproof calls+contains+inherits,20,True,229,True,4
+fastapi_14609,provided,0,False,3,True,3
+fastapi_14609,provided,5,True,69,True,3
+fastapi_14609,provided,10,True,70,True,3
+fastapi_14609,provided,20,True,71,True,3
+fastapi_14609,callproof all edges,0,False,3,True,3
+fastapi_14609,callproof all edges,5,True,124,True,3
+fastapi_14609,callproof all edges,10,True,168,True,3
+fastapi_14609,callproof all edges,20,True,228,True,3
+fastapi_14609,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14609,callproof calls+contains+inherits,5,False,119,True,3
+fastapi_14609,callproof calls+contains+inherits,10,True,187,True,3
+fastapi_14609,callproof calls+contains+inherits,20,True,245,True,3
+fastapi_14616,provided,0,False,3,True,3
+fastapi_14616,provided,5,False,25,True,3
+fastapi_14616,provided,10,False,103,True,3
+fastapi_14616,provided,20,False,107,True,3
+fastapi_14616,callproof all edges,0,False,3,True,3
+fastapi_14616,callproof all edges,5,False,119,True,3
+fastapi_14616,callproof all edges,10,False,133,True,3
+fastapi_14616,callproof all edges,20,False,149,True,3
+fastapi_14616,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14616,callproof calls+contains+inherits,5,False,110,True,3
+fastapi_14616,callproof calls+contains+inherits,10,False,123,True,3
+fastapi_14616,callproof calls+contains+inherits,20,False,138,True,3
+fastapi_14786,provided,0,False,3,True,3
+fastapi_14786,provided,5,False,11,True,3
+fastapi_14786,provided,10,False,65,True,3
+fastapi_14786,provided,20,False,76,True,3
+fastapi_14786,callproof all edges,0,False,3,True,3
+fastapi_14786,callproof all edges,5,False,34,True,3
+fastapi_14786,callproof all edges,10,False,57,True,3
+fastapi_14786,callproof all edges,20,True,137,True,3
+fastapi_14786,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14786,callproof calls+contains+inherits,5,False,32,True,3
+fastapi_14786,callproof calls+contains+inherits,10,False,55,True,3
+fastapi_14786,callproof calls+contains+inherits,20,True,118,True,3
+fastapi_14794,provided,0,True,3,True,3
+fastapi_14794,provided,5,True,26,True,3
+fastapi_14794,provided,10,True,39,True,3
+fastapi_14794,provided,20,True,78,True,3
+fastapi_14794,callproof all edges,0,True,3,True,3
+fastapi_14794,callproof all edges,5,True,97,True,3
+fastapi_14794,callproof all edges,10,True,119,True,3
+fastapi_14794,callproof all edges,20,True,155,True,3
+fastapi_14794,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_14794,callproof calls+contains+inherits,5,True,89,True,3
+fastapi_14794,callproof calls+contains+inherits,10,True,108,True,3
+fastapi_14794,callproof calls+contains+inherits,20,True,135,True,3
+fastapi_14851,provided,0,False,4,True,4
+fastapi_14851,provided,5,False,54,True,4
+fastapi_14851,provided,10,True,78,True,4
+fastapi_14851,provided,20,True,79,True,4
+fastapi_14851,callproof all edges,0,False,4,True,4
+fastapi_14851,callproof all edges,5,False,85,True,4
+fastapi_14851,callproof all edges,10,False,94,True,4
+fastapi_14851,callproof all edges,20,False,129,True,4
+fastapi_14851,callproof calls+contains+inherits,0,False,4,True,4
+fastapi_14851,callproof calls+contains+inherits,5,False,67,True,4
+fastapi_14851,callproof calls+contains+inherits,10,False,95,True,4
+fastapi_14851,callproof calls+contains+inherits,20,True,227,True,4
+fastapi_14873,provided,0,True,4,True,4
+fastapi_14873,provided,5,True,36,True,4
+fastapi_14873,provided,10,True,58,True,4
+fastapi_14873,provided,20,True,58,True,4
+fastapi_14873,callproof all edges,0,True,4,True,4
+fastapi_14873,callproof all edges,5,True,63,True,4
+fastapi_14873,callproof all edges,10,True,83,True,4
+fastapi_14873,callproof all edges,20,True,204,True,4
+fastapi_14873,callproof calls+contains+inherits,0,True,4,True,4
+fastapi_14873,callproof calls+contains+inherits,5,True,58,True,4
+fastapi_14873,callproof calls+contains+inherits,10,True,74,True,4
+fastapi_14873,callproof calls+contains+inherits,20,True,166,True,4
+fastapi_14953,provided,0,False,3,True,3
+fastapi_14953,provided,5,False,17,True,3
+fastapi_14953,provided,10,False,32,True,3
+fastapi_14953,provided,20,False,32,True,3
+fastapi_14953,callproof all edges,0,False,3,True,3
+fastapi_14953,callproof all edges,5,False,103,True,3
+fastapi_14953,callproof all edges,10,False,116,True,3
+fastapi_14953,callproof all edges,20,False,150,True,3
+fastapi_14953,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14953,callproof calls+contains+inherits,5,False,60,True,3
+fastapi_14953,callproof calls+contains+inherits,10,False,74,True,3
+fastapi_14953,callproof calls+contains+inherits,20,False,107,True,3
+fastapi_14962,provided,0,False,3,True,3
+fastapi_14962,provided,5,False,21,True,3
+fastapi_14962,provided,10,False,46,True,3
+fastapi_14962,provided,20,False,72,True,3
+fastapi_14962,callproof all edges,0,False,3,True,3
+fastapi_14962,callproof all edges,5,False,46,True,3
+fastapi_14962,callproof all edges,10,False,70,True,3
+fastapi_14962,callproof all edges,20,False,127,True,3
+fastapi_14962,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14962,callproof calls+contains+inherits,5,False,34,True,3
+fastapi_14962,callproof calls+contains+inherits,10,False,52,True,3
+fastapi_14962,callproof calls+contains+inherits,20,False,102,True,3
+fastapi_14964,provided,0,False,3,True,3
+fastapi_14964,provided,5,True,9,True,3
+fastapi_14964,provided,10,True,64,True,3
+fastapi_14964,provided,20,True,64,True,3
+fastapi_14964,callproof all edges,0,False,3,True,3
+fastapi_14964,callproof all edges,5,True,58,True,3
+fastapi_14964,callproof all edges,10,True,127,True,3
+fastapi_14964,callproof all edges,20,True,199,True,3
+fastapi_14964,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14964,callproof calls+contains+inherits,5,True,54,True,3
+fastapi_14964,callproof calls+contains+inherits,10,True,121,True,3
+fastapi_14964,callproof calls+contains+inherits,20,True,173,True,3
+fastapi_14978,provided,0,False,3,True,3
+fastapi_14978,provided,5,True,11,True,3
+fastapi_14978,provided,10,True,59,True,3
+fastapi_14978,provided,20,True,68,True,3
+fastapi_14978,callproof all edges,0,False,3,True,3
+fastapi_14978,callproof all edges,5,True,62,True,3
+fastapi_14978,callproof all edges,10,True,136,True,3
+fastapi_14978,callproof all edges,20,True,144,True,3
+fastapi_14978,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_14978,callproof calls+contains+inherits,5,True,37,True,3
+fastapi_14978,callproof calls+contains+inherits,10,True,111,True,3
+fastapi_14978,callproof calls+contains+inherits,20,True,125,True,3
+fastapi_14986,provided,0,True,3,True,3
+fastapi_14986,provided,5,True,76,True,3
+fastapi_14986,provided,10,True,126,True,3
+fastapi_14986,provided,20,True,126,True,3
+fastapi_14986,callproof all edges,0,True,7,True,7
+fastapi_14986,callproof all edges,5,True,60,True,7
+fastapi_14986,callproof all edges,10,True,80,True,7
+fastapi_14986,callproof all edges,20,True,101,True,7
+fastapi_14986,callproof calls+contains+inherits,0,True,7,True,7
+fastapi_14986,callproof calls+contains+inherits,5,True,60,True,7
+fastapi_14986,callproof calls+contains+inherits,10,True,76,True,7
+fastapi_14986,callproof calls+contains+inherits,20,True,96,True,7
+fastapi_15023,provided,0,False,3,True,3
+fastapi_15023,provided,5,False,3,True,3
+fastapi_15023,provided,10,False,3,True,3
+fastapi_15023,provided,20,False,3,True,3
+fastapi_15023,callproof all edges,0,False,3,True,3
+fastapi_15023,callproof all edges,5,False,30,True,3
+fastapi_15023,callproof all edges,10,False,33,True,3
+fastapi_15023,callproof all edges,20,False,33,True,3
+fastapi_15023,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_15023,callproof calls+contains+inherits,5,False,30,True,3
+fastapi_15023,callproof calls+contains+inherits,10,False,33,True,3
+fastapi_15023,callproof calls+contains+inherits,20,False,33,True,3
+fastapi_15030,provided,0,False,4,True,4
+fastapi_15030,provided,5,False,56,True,4
+fastapi_15030,provided,10,False,83,True,4
+fastapi_15030,provided,20,False,84,True,4
+fastapi_15030,callproof all edges,0,False,4,True,4
+fastapi_15030,callproof all edges,5,False,44,True,4
+fastapi_15030,callproof all edges,10,False,47,True,4
+fastapi_15030,callproof all edges,20,False,142,True,4
+fastapi_15030,callproof calls+contains+inherits,0,False,4,True,4
+fastapi_15030,callproof calls+contains+inherits,5,False,31,True,4
+fastapi_15030,callproof calls+contains+inherits,10,False,104,True,4
+fastapi_15030,callproof calls+contains+inherits,20,False,146,True,4
+fastapi_15588,provided,0,False,3,True,3
+fastapi_15588,provided,5,False,19,True,3
+fastapi_15588,provided,10,False,21,True,3
+fastapi_15588,provided,20,False,25,True,3
+fastapi_15588,callproof all edges,0,False,3,True,3
+fastapi_15588,callproof all edges,5,False,36,True,3
+fastapi_15588,callproof all edges,10,False,60,True,3
+fastapi_15588,callproof all edges,20,False,77,True,3
+fastapi_15588,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_15588,callproof calls+contains+inherits,5,False,35,True,3
+fastapi_15588,callproof calls+contains+inherits,10,False,60,True,3
+fastapi_15588,callproof calls+contains+inherits,20,False,77,True,3
+fastapi_15589,provided,0,False,3,True,3
+fastapi_15589,provided,5,False,14,True,3
+fastapi_15589,provided,10,False,16,True,3
+fastapi_15589,provided,20,False,18,True,3
+fastapi_15589,callproof all edges,0,False,3,True,3
+fastapi_15589,callproof all edges,5,False,41,True,3
+fastapi_15589,callproof all edges,10,False,41,True,3
+fastapi_15589,callproof all edges,20,False,79,True,3
+fastapi_15589,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_15589,callproof calls+contains+inherits,5,False,41,True,3
+fastapi_15589,callproof calls+contains+inherits,10,False,58,True,3
+fastapi_15589,callproof calls+contains+inherits,20,False,79,True,3
+fastapi_15745,provided,0,True,3,True,3
+fastapi_15745,provided,5,True,72,True,3
+fastapi_15745,provided,10,True,90,True,3
+fastapi_15745,provided,20,True,90,True,3
+fastapi_15745,callproof all edges,0,True,3,True,3
+fastapi_15745,callproof all edges,5,True,147,True,3
+fastapi_15745,callproof all edges,10,True,157,True,3
+fastapi_15745,callproof all edges,20,True,184,True,3
+fastapi_15745,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_15745,callproof calls+contains+inherits,5,True,110,True,3
+fastapi_15745,callproof calls+contains+inherits,10,True,120,True,3
+fastapi_15745,callproof calls+contains+inherits,20,True,146,True,3
+fastapi_15763,provided,0,False,3,True,3
+fastapi_15763,provided,5,False,11,True,3
+fastapi_15763,provided,10,False,12,True,3
+fastapi_15763,provided,20,False,13,True,3
+fastapi_15763,callproof all edges,0,False,3,True,3
+fastapi_15763,callproof all edges,5,False,30,True,3
+fastapi_15763,callproof all edges,10,False,30,True,3
+fastapi_15763,callproof all edges,20,False,51,True,3
+fastapi_15763,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_15763,callproof calls+contains+inherits,5,False,30,True,3
+fastapi_15763,callproof calls+contains+inherits,10,False,30,True,3
+fastapi_15763,callproof calls+contains+inherits,20,False,51,True,3
+fastapi_15785,provided,0,False,3,True,3
+fastapi_15785,provided,5,False,14,True,3
+fastapi_15785,provided,10,False,16,True,3
+fastapi_15785,provided,20,False,18,True,3
+fastapi_15785,callproof all edges,0,False,3,True,3
+fastapi_15785,callproof all edges,5,False,41,True,3
+fastapi_15785,callproof all edges,10,False,41,True,3
+fastapi_15785,callproof all edges,20,False,79,True,3
+fastapi_15785,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_15785,callproof calls+contains+inherits,5,False,41,True,3
+fastapi_15785,callproof calls+contains+inherits,10,False,58,True,3
+fastapi_15785,callproof calls+contains+inherits,20,False,79,True,3
+fastapi_15800,provided,0,False,3,True,3
+fastapi_15800,provided,5,False,19,True,3
+fastapi_15800,provided,10,False,21,True,3
+fastapi_15800,provided,20,False,25,True,3
+fastapi_15800,callproof all edges,0,False,3,True,3
+fastapi_15800,callproof all edges,5,False,36,True,3
+fastapi_15800,callproof all edges,10,False,60,True,3
+fastapi_15800,callproof all edges,20,False,77,True,3
+fastapi_15800,callproof calls+contains+inherits,0,False,3,True,3
+fastapi_15800,callproof calls+contains+inherits,5,False,35,True,3
+fastapi_15800,callproof calls+contains+inherits,10,False,60,True,3
+fastapi_15800,callproof calls+contains+inherits,20,False,77,True,3
+fastapi_5077,provided,0,True,3,True,3
+fastapi_5077,provided,5,True,21,True,3
+fastapi_5077,provided,10,True,64,True,3
+fastapi_5077,provided,20,True,87,True,3
+fastapi_5077,callproof all edges,0,True,3,True,3
+fastapi_5077,callproof all edges,5,True,83,True,3
+fastapi_5077,callproof all edges,10,True,108,True,3
+fastapi_5077,callproof all edges,20,True,148,True,3
+fastapi_5077,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_5077,callproof calls+contains+inherits,5,True,37,True,3
+fastapi_5077,callproof calls+contains+inherits,10,True,55,True,3
+fastapi_5077,callproof calls+contains+inherits,20,True,91,True,3
+fastapi_5624,provided,0,True,3,True,3
+fastapi_5624,provided,5,True,15,True,3
+fastapi_5624,provided,10,True,29,True,3
+fastapi_5624,provided,20,True,72,True,3
+fastapi_5624,callproof all edges,0,True,3,True,3
+fastapi_5624,callproof all edges,5,True,29,True,3
+fastapi_5624,callproof all edges,10,True,41,True,3
+fastapi_5624,callproof all edges,20,True,142,True,3
+fastapi_5624,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_5624,callproof calls+contains+inherits,5,True,21,True,3
+fastapi_5624,callproof calls+contains+inherits,10,True,33,True,3
+fastapi_5624,callproof calls+contains+inherits,20,True,82,True,3
+fastapi_9425,provided,0,True,3,True,3
+fastapi_9425,provided,5,True,43,True,3
+fastapi_9425,provided,10,True,59,True,3
+fastapi_9425,provided,20,True,64,True,3
+fastapi_9425,callproof all edges,0,True,3,True,3
+fastapi_9425,callproof all edges,5,True,63,True,3
+fastapi_9425,callproof all edges,10,True,97,True,3
+fastapi_9425,callproof all edges,20,True,133,True,3
+fastapi_9425,callproof calls+contains+inherits,0,True,3,True,3
+fastapi_9425,callproof calls+contains+inherits,5,True,40,True,3
+fastapi_9425,callproof calls+contains+inherits,10,True,56,True,3
+fastapi_9425,callproof calls+contains+inherits,20,True,80,True,3
+fastapi_9555,provided,0,False,4,True,4
+fastapi_9555,provided,5,False,56,True,4
+fastapi_9555,provided,10,False,72,True,4
+fastapi_9555,provided,20,False,73,True,4
+fastapi_9555,callproof all edges,0,False,6,True,6
+fastapi_9555,callproof all edges,5,False,65,True,6
+fastapi_9555,callproof all edges,10,False,145,True,6
+fastapi_9555,callproof all edges,20,False,172,True,6
+fastapi_9555,callproof calls+contains+inherits,0,False,6,True,6
+fastapi_9555,callproof calls+contains+inherits,5,False,62,True,6
+fastapi_9555,callproof calls+contains+inherits,10,False,154,True,6
+fastapi_9555,callproof calls+contains+inherits,20,False,183,True,6
+fastapi_9753,provided,0,False,3,True,3
+fastapi_9753,provided,5,False,15,True,3
+fastapi_9753,provided,10,False,28,True,3
+fastapi_9753,provided,20,False,81,True,3
+fastapi_9753,callproof all edges,0,False,5,True,5
+fastapi_9753,callproof all edges,5,False,65,True,5
+fastapi_9753,callproof all edges,10,False,83,True,5
+fastapi_9753,callproof all edges,20,False,124,True,5
+fastapi_9753,callproof calls+contains+inherits,0,False,5,True,5
+fastapi_9753,callproof calls+contains+inherits,5,False,64,True,5
+fastapi_9753,callproof calls+contains+inherits,10,False,80,True,5
+fastapi_9753,callproof calls+contains+inherits,20,False,109,True,5
+httpx_3672,provided,0,True,3,True,3
+httpx_3672,provided,5,True,50,True,3
+httpx_3672,provided,10,True,52,True,3
+httpx_3672,provided,20,True,54,True,3
+httpx_3672,callproof all edges,0,True,3,True,3
+httpx_3672,callproof all edges,5,True,61,True,3
+httpx_3672,callproof all edges,10,True,71,True,3
+httpx_3672,callproof all edges,20,True,100,True,3
+httpx_3672,callproof calls+contains+inherits,0,True,3,True,3
+httpx_3672,callproof calls+contains+inherits,5,True,58,True,3
+httpx_3672,callproof calls+contains+inherits,10,True,81,True,3
+httpx_3672,callproof calls+contains+inherits,20,True,94,True,3
+requests_6589,provided,0,True,3,True,3
+requests_6589,provided,5,True,28,True,3
+requests_6589,provided,10,True,33,True,3
+requests_6589,provided,20,True,36,True,3
+requests_6589,callproof all edges,0,True,3,True,3
+requests_6589,callproof all edges,5,True,35,True,3
+requests_6589,callproof all edges,10,True,75,True,3
+requests_6589,callproof all edges,20,True,133,True,3
+requests_6589,callproof calls+contains+inherits,0,True,3,True,3
+requests_6589,callproof calls+contains+inherits,5,True,33,True,3
+requests_6589,callproof calls+contains+inherits,10,True,82,True,3
+requests_6589,callproof calls+contains+inherits,20,True,87,True,3
+requests_6644,provided,0,False,3,True,3
+requests_6644,provided,5,False,32,True,3
+requests_6644,provided,10,False,55,True,3
+requests_6644,provided,20,False,68,True,3
+requests_6644,callproof all edges,0,False,3,True,3
+requests_6644,callproof all edges,5,False,46,True,3
+requests_6644,callproof all edges,10,False,84,True,3
+requests_6644,callproof all edges,20,False,148,True,3
+requests_6644,callproof calls+contains+inherits,0,False,3,True,3
+requests_6644,callproof calls+contains+inherits,5,False,42,True,3
+requests_6644,callproof calls+contains+inherits,10,False,75,True,3
+requests_6644,callproof calls+contains+inherits,20,False,114,True,3
+requests_6757,provided,0,False,3,True,3
+requests_6757,provided,5,False,33,True,3
+requests_6757,provided,10,False,45,True,3
+requests_6757,provided,20,False,55,True,3
+requests_6757,callproof all edges,0,False,3,True,3
+requests_6757,callproof all edges,5,False,43,True,3
+requests_6757,callproof all edges,10,True,123,True,3
+requests_6757,callproof all edges,20,True,141,True,3
+requests_6757,callproof calls+contains+inherits,0,False,3,True,3
+requests_6757,callproof calls+contains+inherits,5,False,40,True,3
+requests_6757,callproof calls+contains+inherits,10,True,103,True,3
+requests_6757,callproof calls+contains+inherits,20,True,112,True,3
+requests_7205,provided,0,True,3,True,3
+requests_7205,provided,5,True,22,True,3
+requests_7205,provided,10,True,27,True,3
+requests_7205,provided,20,True,48,True,3
+requests_7205,callproof all edges,0,True,3,True,3
+requests_7205,callproof all edges,5,True,58,True,3
+requests_7205,callproof all edges,10,True,87,True,3
+requests_7205,callproof all edges,20,True,176,True,3
+requests_7205,callproof calls+contains+inherits,0,True,3,True,3
+requests_7205,callproof calls+contains+inherits,5,True,31,True,3
+requests_7205,callproof calls+contains+inherits,10,True,39,True,3
+requests_7205,callproof calls+contains+inherits,20,True,126,True,3
+requests_7309,provided,0,True,3,True,3
+requests_7309,provided,5,True,13,True,3
+requests_7309,provided,10,True,41,True,3
+requests_7309,provided,20,True,135,True,3
+requests_7309,callproof all edges,0,True,3,True,3
+requests_7309,callproof all edges,5,True,79,True,3
+requests_7309,callproof all edges,10,True,98,True,3
+requests_7309,callproof all edges,20,True,158,True,3
+requests_7309,callproof calls+contains+inherits,0,True,3,True,3
+requests_7309,callproof calls+contains+inherits,5,True,49,True,3
+requests_7309,callproof calls+contains+inherits,10,True,61,True,3
+requests_7309,callproof calls+contains+inherits,20,True,69,True,3
+requests_7315,provided,0,False,3,True,3
+requests_7315,provided,5,True,22,True,3
+requests_7315,provided,10,True,46,True,3
+requests_7315,provided,20,True,58,True,3
+requests_7315,callproof all edges,0,False,3,True,3
+requests_7315,callproof all edges,5,True,37,True,3
+requests_7315,callproof all edges,10,True,72,True,3
+requests_7315,callproof all edges,20,True,149,True,3
+requests_7315,callproof calls+contains+inherits,0,False,3,True,3
+requests_7315,callproof calls+contains+inherits,5,True,31,True,3
+requests_7315,callproof calls+contains+inherits,10,True,62,True,3
+requests_7315,callproof calls+contains+inherits,20,True,104,True,3
+requests_7328,provided,0,False,3,True,3
+requests_7328,provided,5,True,15,True,3
+requests_7328,provided,10,True,73,True,3
+requests_7328,provided,20,True,108,True,3
+requests_7328,callproof all edges,0,False,3,True,3
+requests_7328,callproof all edges,5,True,44,True,3
+requests_7328,callproof all edges,10,True,136,True,3
+requests_7328,callproof all edges,20,True,147,True,3
+requests_7328,callproof calls+contains+inherits,0,False,3,True,3
+requests_7328,callproof calls+contains+inherits,5,True,40,True,3
+requests_7328,callproof calls+contains+inherits,10,True,103,True,3
+requests_7328,callproof calls+contains+inherits,20,True,110,True,3
+requests_7427,provided,0,True,4,True,4
+requests_7427,provided,5,True,54,True,4
+requests_7427,provided,10,True,73,True,4
+requests_7427,provided,20,True,83,True,4
+requests_7427,callproof all edges,0,True,4,True,4
+requests_7427,callproof all edges,5,True,66,True,4
+requests_7427,callproof all edges,10,True,126,True,4
+requests_7427,callproof all edges,20,True,191,True,4
+requests_7427,callproof calls+contains+inherits,0,True,4,True,4
+requests_7427,callproof calls+contains+inherits,5,True,56,True,4
+requests_7427,callproof calls+contains+inherits,10,True,126,True,4
+requests_7427,callproof calls+contains+inherits,20,True,140,True,4
+requests_7433,provided,0,True,3,True,3
+requests_7433,provided,5,True,30,True,3
+requests_7433,provided,10,True,52,True,3
+requests_7433,provided,20,True,73,True,3
+requests_7433,callproof all edges,0,True,3,True,3
+requests_7433,callproof all edges,5,True,22,True,3
+requests_7433,callproof all edges,10,True,73,True,3
+requests_7433,callproof all edges,20,True,135,True,3
+requests_7433,callproof calls+contains+inherits,0,True,3,True,3
+requests_7433,callproof calls+contains+inherits,5,True,30,True,3
+requests_7433,callproof calls+contains+inherits,10,True,62,True,3
+requests_7433,callproof calls+contains+inherits,20,True,108,True,3
+requests_7502,provided,0,True,3,True,3
+requests_7502,provided,5,True,30,True,3
+requests_7502,provided,10,True,53,True,3
+requests_7502,provided,20,True,74,True,3
+requests_7502,callproof all edges,0,True,3,True,3
+requests_7502,callproof all edges,5,True,19,True,3
+requests_7502,callproof all edges,10,True,62,True,3
+requests_7502,callproof all edges,20,True,167,True,3
+requests_7502,callproof calls+contains+inherits,0,True,3,True,3
+requests_7502,callproof calls+contains+inherits,5,True,17,True,3
+requests_7502,callproof calls+contains+inherits,10,True,50,True,3
+requests_7502,callproof calls+contains+inherits,20,True,106,True,3
+requests_7505,provided,0,True,3,True,3
+requests_7505,provided,5,True,42,True,3
+requests_7505,provided,10,True,54,True,3
+requests_7505,provided,20,True,64,True,3
+requests_7505,callproof all edges,0,True,3,True,3
+requests_7505,callproof all edges,5,True,44,True,3
+requests_7505,callproof all edges,10,True,58,True,3
+requests_7505,callproof all edges,20,True,98,True,3
+requests_7505,callproof calls+contains+inherits,0,True,3,True,3
+requests_7505,callproof calls+contains+inherits,5,True,40,True,3
+requests_7505,callproof calls+contains+inherits,10,True,57,True,3
+requests_7505,callproof calls+contains+inherits,20,True,73,True,3
+rich_2725,provided,0,False,4,True,4
+rich_2725,provided,5,False,18,True,4
+rich_2725,provided,10,True,127,True,4
+rich_2725,provided,20,True,251,True,4
+rich_2725,callproof all edges,0,False,4,True,4
+rich_2725,callproof all edges,5,False,33,True,4
+rich_2725,callproof all edges,10,False,110,True,4
+rich_2725,callproof all edges,20,False,209,True,4
+rich_2725,callproof calls+contains+inherits,0,False,4,True,4
+rich_2725,callproof calls+contains+inherits,5,False,33,True,4
+rich_2725,callproof calls+contains+inherits,10,False,109,True,4
+rich_2725,callproof calls+contains+inherits,20,True,190,True,4
+rich_2943,provided,0,True,3,True,3
+rich_2943,provided,5,True,24,True,3
+rich_2943,provided,10,True,153,True,3
+rich_2943,provided,20,True,188,True,3
+rich_2943,callproof all edges,0,True,3,True,3
+rich_2943,callproof all edges,5,True,88,True,3
+rich_2943,callproof all edges,10,True,147,True,3
+rich_2943,callproof all edges,20,True,264,True,3
+rich_2943,callproof calls+contains+inherits,0,True,3,True,3
+rich_2943,callproof calls+contains+inherits,5,True,56,True,3
+rich_2943,callproof calls+contains+inherits,10,True,126,True,3
+rich_2943,callproof calls+contains+inherits,20,True,252,True,3
+rich_3006,provided,0,False,3,True,3
+rich_3006,provided,5,False,64,True,3
+rich_3006,provided,10,False,173,True,3
+rich_3006,provided,20,False,194,True,3
+rich_3006,callproof all edges,0,False,3,True,3
+rich_3006,callproof all edges,5,False,93,True,3
+rich_3006,callproof all edges,10,False,121,True,3
+rich_3006,callproof all edges,20,False,131,True,3
+rich_3006,callproof calls+contains+inherits,0,False,3,True,3
+rich_3006,callproof calls+contains+inherits,5,False,92,True,3
+rich_3006,callproof calls+contains+inherits,10,False,110,True,3
+rich_3006,callproof calls+contains+inherits,20,False,125,True,3
+rich_3052,provided,0,True,3,True,3
+rich_3052,provided,5,True,35,True,3
+rich_3052,provided,10,True,68,True,3
+rich_3052,provided,20,True,89,True,3
+rich_3052,callproof all edges,0,True,3,True,3
+rich_3052,callproof all edges,5,True,56,True,3
+rich_3052,callproof all edges,10,True,133,True,3
+rich_3052,callproof all edges,20,True,159,True,3
+rich_3052,callproof calls+contains+inherits,0,True,3,True,3
+rich_3052,callproof calls+contains+inherits,5,True,50,True,3
+rich_3052,callproof calls+contains+inherits,10,True,85,True,3
+rich_3052,callproof calls+contains+inherits,20,True,158,True,3
+rich_3061,provided,0,True,4,True,4
+rich_3061,provided,5,True,59,True,4
+rich_3061,provided,10,True,89,True,4
+rich_3061,provided,20,True,91,True,4
+rich_3061,callproof all edges,0,True,4,True,4
+rich_3061,callproof all edges,5,True,51,True,4
+rich_3061,callproof all edges,10,True,119,True,4
+rich_3061,callproof all edges,20,True,199,True,4
+rich_3061,callproof calls+contains+inherits,0,True,4,True,4
+rich_3061,callproof calls+contains+inherits,5,True,51,True,4
+rich_3061,callproof calls+contains+inherits,10,True,118,True,4
+rich_3061,callproof calls+contains+inherits,20,True,198,True,4
+rich_3063,provided,0,False,3,True,3
+rich_3063,provided,5,False,29,True,3
+rich_3063,provided,10,False,119,True,3
+rich_3063,provided,20,False,251,True,3
+rich_3063,callproof all edges,0,False,3,True,3
+rich_3063,callproof all edges,5,False,100,True,3
+rich_3063,callproof all edges,10,False,159,True,3
+rich_3063,callproof all edges,20,False,298,True,3
+rich_3063,callproof calls+contains+inherits,0,False,3,True,3
+rich_3063,callproof calls+contains+inherits,5,False,68,True,3
+rich_3063,callproof calls+contains+inherits,10,False,137,True,3
+rich_3063,callproof calls+contains+inherits,20,False,250,True,3
+rich_3064,provided,0,False,3,True,3
+rich_3064,provided,5,False,24,True,3
+rich_3064,provided,10,True,108,True,3
+rich_3064,provided,20,True,144,True,3
+rich_3064,callproof all edges,0,False,3,True,3
+rich_3064,callproof all edges,5,False,90,True,3
+rich_3064,callproof all edges,10,False,149,True,3
+rich_3064,callproof all edges,20,True,219,True,3
+rich_3064,callproof calls+contains+inherits,0,False,3,True,3
+rich_3064,callproof calls+contains+inherits,5,False,57,True,3
+rich_3064,callproof calls+contains+inherits,10,True,126,True,3
+rich_3064,callproof calls+contains+inherits,20,True,208,True,3
+rich_3067,provided,0,False,3,True,3
+rich_3067,provided,5,False,28,True,3
+rich_3067,provided,10,False,111,True,3
+rich_3067,provided,20,False,214,True,3
+rich_3067,callproof all edges,0,False,3,True,3
+rich_3067,callproof all edges,5,False,116,True,3
+rich_3067,callproof all edges,10,False,175,True,3
+rich_3067,callproof all edges,20,False,290,True,3
+rich_3067,callproof calls+contains+inherits,0,False,3,True,3
+rich_3067,callproof calls+contains+inherits,5,False,81,True,3
+rich_3067,callproof calls+contains+inherits,10,False,150,True,3
+rich_3067,callproof calls+contains+inherits,20,False,230,True,3
+rich_3130,provided,0,True,3,True,3
+rich_3130,provided,5,True,63,True,3
+rich_3130,provided,10,True,140,True,3
+rich_3130,provided,20,True,155,True,3
+rich_3130,callproof all edges,0,True,3,True,3
+rich_3130,callproof all edges,5,True,99,True,3
+rich_3130,callproof all edges,10,True,141,True,3
+rich_3130,callproof all edges,20,True,222,True,3
+rich_3130,callproof calls+contains+inherits,0,True,3,True,3
+rich_3130,callproof calls+contains+inherits,5,True,95,True,3
+rich_3130,callproof calls+contains+inherits,10,True,116,True,3
+rich_3130,callproof calls+contains+inherits,20,True,182,True,3
+rich_3180,provided,0,False,3,True,3
+rich_3180,provided,5,True,61,True,3
+rich_3180,provided,10,True,132,True,3
+rich_3180,provided,20,True,145,True,3
+rich_3180,callproof all edges,0,False,3,True,3
+rich_3180,callproof all edges,5,True,109,True,3
+rich_3180,callproof all edges,10,True,152,True,3
+rich_3180,callproof all edges,20,True,242,True,3
+rich_3180,callproof calls+contains+inherits,0,False,3,True,3
+rich_3180,callproof calls+contains+inherits,5,True,108,True,3
+rich_3180,callproof calls+contains+inherits,10,True,128,True,3
+rich_3180,callproof calls+contains+inherits,20,True,214,True,3
+rich_3296,provided,0,False,3,True,3
+rich_3296,provided,5,False,28,True,3
+rich_3296,provided,10,True,148,True,3
+rich_3296,provided,20,True,180,True,3
+rich_3296,callproof all edges,0,False,3,True,3
+rich_3296,callproof all edges,5,False,93,True,3
+rich_3296,callproof all edges,10,False,152,True,3
+rich_3296,callproof all edges,20,False,269,True,3
+rich_3296,callproof calls+contains+inherits,0,False,3,True,3
+rich_3296,callproof calls+contains+inherits,5,False,62,True,3
+rich_3296,callproof calls+contains+inherits,10,False,132,True,3
+rich_3296,callproof calls+contains+inherits,20,True,252,True,3
+rich_3454,provided,0,False,3,True,3
+rich_3454,provided,5,False,23,True,3
+rich_3454,provided,10,False,107,True,3
+rich_3454,provided,20,False,140,True,3
+rich_3454,callproof all edges,0,False,3,True,3
+rich_3454,callproof all edges,5,True,89,True,3
+rich_3454,callproof all edges,10,True,148,True,3
+rich_3454,callproof all edges,20,True,265,True,3
+rich_3454,callproof calls+contains+inherits,0,False,3,True,3
+rich_3454,callproof calls+contains+inherits,5,True,57,True,3
+rich_3454,callproof calls+contains+inherits,10,True,127,True,3
+rich_3454,callproof calls+contains+inherits,20,True,217,True,3
+rich_3468,provided,0,False,3,True,3
+rich_3468,provided,5,False,24,True,3
+rich_3468,provided,10,False,60,True,3
+rich_3468,provided,20,False,97,True,3
+rich_3468,callproof all edges,0,False,3,True,3
+rich_3468,callproof all edges,5,False,85,True,3
+rich_3468,callproof all edges,10,False,144,True,3
+rich_3468,callproof all edges,20,False,227,True,3
+rich_3468,callproof calls+contains+inherits,0,False,3,True,3
+rich_3468,callproof calls+contains+inherits,5,False,53,True,3
+rich_3468,callproof calls+contains+inherits,10,False,123,True,3
+rich_3468,callproof calls+contains+inherits,20,True,215,True,3
+rich_3469,provided,0,False,3,True,3
+rich_3469,provided,5,False,29,True,3
+rich_3469,provided,10,False,119,True,3
+rich_3469,provided,20,False,251,True,3
+rich_3469,callproof all edges,0,False,3,True,3
+rich_3469,callproof all edges,5,False,99,True,3
+rich_3469,callproof all edges,10,False,158,True,3
+rich_3469,callproof all edges,20,False,299,True,3
+rich_3469,callproof calls+contains+inherits,0,False,3,True,3
+rich_3469,callproof calls+contains+inherits,5,False,67,True,3
+rich_3469,callproof calls+contains+inherits,10,False,137,True,3
+rich_3469,callproof calls+contains+inherits,20,False,253,True,3
+rich_3470,provided,0,True,3,True,3
+rich_3470,provided,5,True,29,True,3
+rich_3470,provided,10,True,119,True,3
+rich_3470,provided,20,True,251,True,3
+rich_3470,callproof all edges,0,True,3,True,3
+rich_3470,callproof all edges,5,True,99,True,3
+rich_3470,callproof all edges,10,True,158,True,3
+rich_3470,callproof all edges,20,True,299,True,3
+rich_3470,callproof calls+contains+inherits,0,True,3,True,3
+rich_3470,callproof calls+contains+inherits,5,True,67,True,3
+rich_3470,callproof calls+contains+inherits,10,True,137,True,3
+rich_3470,callproof calls+contains+inherits,20,True,253,True,3
+rich_3471,provided,0,True,3,True,3
+rich_3471,provided,5,True,28,True,3
+rich_3471,provided,10,True,118,True,3
+rich_3471,provided,20,True,245,True,3
+rich_3471,callproof all edges,0,True,3,True,3
+rich_3471,callproof all edges,5,True,96,True,3
+rich_3471,callproof all edges,10,True,155,True,3
+rich_3471,callproof all edges,20,True,297,True,3
+rich_3471,callproof calls+contains+inherits,0,True,3,True,3
+rich_3471,callproof calls+contains+inherits,5,True,64,True,3
+rich_3471,callproof calls+contains+inherits,10,True,134,True,3
+rich_3471,callproof calls+contains+inherits,20,True,251,True,3
+rich_3472,provided,0,False,3,True,3
+rich_3472,provided,5,True,24,True,3
+rich_3472,provided,10,True,116,True,3
+rich_3472,provided,20,True,152,True,3
+rich_3472,callproof all edges,0,False,3,True,3
+rich_3472,callproof all edges,5,True,89,True,3
+rich_3472,callproof all edges,10,True,148,True,3
+rich_3472,callproof all edges,20,True,255,True,3
+rich_3472,callproof calls+contains+inherits,0,False,3,True,3
+rich_3472,callproof calls+contains+inherits,5,True,58,True,3
+rich_3472,callproof calls+contains+inherits,10,True,128,True,3
+rich_3472,callproof calls+contains+inherits,20,True,231,True,3
+rich_3480,provided,0,False,3,True,3
+rich_3480,provided,5,False,29,True,3
+rich_3480,provided,10,False,119,True,3
+rich_3480,provided,20,False,251,True,3
+rich_3480,callproof all edges,0,False,3,True,3
+rich_3480,callproof all edges,5,False,99,True,3
+rich_3480,callproof all edges,10,False,158,True,3
+rich_3480,callproof all edges,20,False,299,True,3
+rich_3480,callproof calls+contains+inherits,0,False,3,True,3
+rich_3480,callproof calls+contains+inherits,5,False,67,True,3
+rich_3480,callproof calls+contains+inherits,10,False,137,True,3
+rich_3480,callproof calls+contains+inherits,20,False,253,True,3
+rich_3486,provided,0,True,3,True,3
+rich_3486,provided,5,True,21,True,3
+rich_3486,provided,10,True,70,True,3
+rich_3486,provided,20,True,98,True,3
+rich_3486,callproof all edges,0,True,3,True,3
+rich_3486,callproof all edges,5,True,52,True,3
+rich_3486,callproof all edges,10,True,134,True,3
+rich_3486,callproof all edges,20,True,227,True,3
+rich_3486,callproof calls+contains+inherits,0,True,3,True,3
+rich_3486,callproof calls+contains+inherits,5,True,53,True,3
+rich_3486,callproof calls+contains+inherits,10,True,117,True,3
+rich_3486,callproof calls+contains+inherits,20,True,171,True,3
+rich_3506,provided,0,True,3,True,3
+rich_3506,provided,5,True,23,True,3
+rich_3506,provided,10,True,120,True,3
+rich_3506,provided,20,True,152,True,3
+rich_3506,callproof all edges,0,True,3,True,3
+rich_3506,callproof all edges,5,True,89,True,3
+rich_3506,callproof all edges,10,True,148,True,3
+rich_3506,callproof all edges,20,True,273,True,3
+rich_3506,callproof calls+contains+inherits,0,True,3,True,3
+rich_3506,callproof calls+contains+inherits,5,True,58,True,3
+rich_3506,callproof calls+contains+inherits,10,True,128,True,3
+rich_3506,callproof calls+contains+inherits,20,True,241,True,3
+rich_3518,provided,0,False,4,True,4
+rich_3518,provided,5,False,21,True,4
+rich_3518,provided,10,True,102,True,4
+rich_3518,provided,20,True,257,True,4
+rich_3518,callproof all edges,0,False,4,True,4
+rich_3518,callproof all edges,5,True,81,True,4
+rich_3518,callproof all edges,10,True,159,True,4
+rich_3518,callproof all edges,20,True,248,True,4
+rich_3518,callproof calls+contains+inherits,0,False,4,True,4
+rich_3518,callproof calls+contains+inherits,5,True,79,True,4
+rich_3518,callproof calls+contains+inherits,10,True,131,True,4
+rich_3518,callproof calls+contains+inherits,20,True,226,True,4
+rich_3521,provided,0,True,3,True,3
+rich_3521,provided,5,True,26,True,3
+rich_3521,provided,10,True,121,True,3
+rich_3521,provided,20,True,154,True,3
+rich_3521,callproof all edges,0,True,3,True,3
+rich_3521,callproof all edges,5,True,92,True,3
+rich_3521,callproof all edges,10,True,152,True,3
+rich_3521,callproof all edges,20,True,279,True,3
+rich_3521,callproof calls+contains+inherits,0,True,3,True,3
+rich_3521,callproof calls+contains+inherits,5,True,61,True,3
+rich_3521,callproof calls+contains+inherits,10,True,132,True,3
+rich_3521,callproof calls+contains+inherits,20,True,246,True,3
+rich_3535,provided,0,True,3,True,3
+rich_3535,provided,5,True,106,True,3
+rich_3535,provided,10,True,109,True,3
+rich_3535,provided,20,True,114,True,3
+rich_3535,callproof all edges,0,True,3,True,3
+rich_3535,callproof all edges,5,True,70,True,3
+rich_3535,callproof all edges,10,True,123,True,3
+rich_3535,callproof all edges,20,True,207,True,3
+rich_3535,callproof calls+contains+inherits,0,True,3,True,3
+rich_3535,callproof calls+contains+inherits,5,True,72,True,3
+rich_3535,callproof calls+contains+inherits,10,True,106,True,3
+rich_3535,callproof calls+contains+inherits,20,True,187,True,3
+rich_3675,provided,0,False,3,True,3
+rich_3675,provided,5,True,28,True,3
+rich_3675,provided,10,True,113,True,3
+rich_3675,provided,20,True,211,True,3
+rich_3675,callproof all edges,0,False,3,True,3
+rich_3675,callproof all edges,5,True,99,True,3
+rich_3675,callproof all edges,10,True,158,True,3
+rich_3675,callproof all edges,20,True,244,True,3
+rich_3675,callproof calls+contains+inherits,0,False,3,True,3
+rich_3675,callproof calls+contains+inherits,5,True,67,True,3
+rich_3675,callproof calls+contains+inherits,10,True,137,True,3
+rich_3675,callproof calls+contains+inherits,20,True,201,True,3
+rich_3676,provided,0,False,5,True,5
+rich_3676,provided,5,False,14,True,5
+rich_3676,provided,10,True,67,True,5
+rich_3676,provided,20,True,159,True,5
+rich_3676,callproof all edges,0,False,5,True,5
+rich_3676,callproof all edges,5,False,32,True,5
+rich_3676,callproof all edges,10,False,100,True,5
+rich_3676,callproof all edges,20,True,213,True,5
+rich_3676,callproof calls+contains+inherits,0,False,5,True,5
+rich_3676,callproof calls+contains+inherits,5,False,31,True,5
+rich_3676,callproof calls+contains+inherits,10,False,99,True,5
+rich_3676,callproof calls+contains+inherits,20,True,202,True,5
+rich_3718,provided,0,False,3,True,3
+rich_3718,provided,5,False,26,True,3
+rich_3718,provided,10,True,119,True,3
+rich_3718,provided,20,True,154,True,3
+rich_3718,callproof all edges,0,False,3,True,3
+rich_3718,callproof all edges,5,False,88,True,3
+rich_3718,callproof all edges,10,True,149,True,3
+rich_3718,callproof all edges,20,True,268,True,3
+rich_3718,callproof calls+contains+inherits,0,False,3,True,3
+rich_3718,callproof calls+contains+inherits,5,False,56,True,3
+rich_3718,callproof calls+contains+inherits,10,True,127,True,3
+rich_3718,callproof calls+contains+inherits,20,True,234,True,3
+rich_3772,provided,0,False,3,True,3
+rich_3772,provided,5,False,31,True,3
+rich_3772,provided,10,False,121,True,3
+rich_3772,provided,20,False,253,True,3
+rich_3772,callproof all edges,0,False,3,True,3
+rich_3772,callproof all edges,5,False,99,True,3
+rich_3772,callproof all edges,10,False,160,True,3
+rich_3772,callproof all edges,20,False,302,True,3
+rich_3772,callproof calls+contains+inherits,0,False,3,True,3
+rich_3772,callproof calls+contains+inherits,5,False,67,True,3
+rich_3772,callproof calls+contains+inherits,10,False,139,True,3
+rich_3772,callproof calls+contains+inherits,20,False,256,True,3
+rich_3777,provided,0,True,3,True,3
+rich_3777,provided,5,True,58,True,3
+rich_3777,provided,10,True,89,True,3
+rich_3777,provided,20,True,102,True,3
+rich_3777,callproof all edges,0,True,3,True,3
+rich_3777,callproof all edges,5,True,69,True,3
+rich_3777,callproof all edges,10,True,131,True,3
+rich_3777,callproof all edges,20,True,245,True,3
+rich_3777,callproof calls+contains+inherits,0,True,3,True,3
+rich_3777,callproof calls+contains+inherits,5,True,69,True,3
+rich_3777,callproof calls+contains+inherits,10,True,129,True,3
+rich_3777,callproof calls+contains+inherits,20,True,242,True,3
+rich_3782,provided,0,True,3,True,3
+rich_3782,provided,5,True,30,True,3
+rich_3782,provided,10,True,113,True,3
+rich_3782,provided,20,True,147,True,3
+rich_3782,callproof all edges,0,True,3,True,3
+rich_3782,callproof all edges,5,True,93,True,3
+rich_3782,callproof all edges,10,True,154,True,3
+rich_3782,callproof all edges,20,True,252,True,3
+rich_3782,callproof calls+contains+inherits,0,True,3,True,3
+rich_3782,callproof calls+contains+inherits,5,True,63,True,3
+rich_3782,callproof calls+contains+inherits,10,True,135,True,3
+rich_3782,callproof calls+contains+inherits,20,True,233,True,3
+rich_3882,provided,0,False,3,True,3
+rich_3882,provided,5,False,62,True,3
+rich_3882,provided,10,True,74,True,3
+rich_3882,provided,20,True,90,True,3
+rich_3882,callproof all edges,0,False,3,True,3
+rich_3882,callproof all edges,5,True,84,True,3
+rich_3882,callproof all edges,10,True,128,True,3
+rich_3882,callproof all edges,20,True,145,True,3
+rich_3882,callproof calls+contains+inherits,0,False,3,True,3
+rich_3882,callproof calls+contains+inherits,5,True,82,True,3
+rich_3882,callproof calls+contains+inherits,10,True,105,True,3
+rich_3882,callproof calls+contains+inherits,20,True,119,True,3
+rich_3894,provided,0,True,3,True,3
+rich_3894,provided,5,True,67,True,3
+rich_3894,provided,10,True,161,True,3
+rich_3894,provided,20,True,186,True,3
+rich_3894,callproof all edges,0,True,3,True,3
+rich_3894,callproof all edges,5,True,41,True,3
+rich_3894,callproof all edges,10,True,141,True,3
+rich_3894,callproof all edges,20,True,253,True,3
+rich_3894,callproof calls+contains+inherits,0,True,3,True,3
+rich_3894,callproof calls+contains+inherits,5,True,38,True,3
+rich_3894,callproof calls+contains+inherits,10,True,123,True,3
+rich_3894,callproof calls+contains+inherits,20,True,231,True,3
+rich_3905,provided,0,False,3,True,3
+rich_3905,provided,5,False,56,True,3
+rich_3905,provided,10,False,124,True,3
+rich_3905,provided,20,False,132,True,3
+rich_3905,callproof all edges,0,False,3,True,3
+rich_3905,callproof all edges,5,False,75,True,3
+rich_3905,callproof all edges,10,False,143,True,3
+rich_3905,callproof all edges,20,False,269,True,3
+rich_3905,callproof calls+contains+inherits,0,False,3,True,3
+rich_3905,callproof calls+contains+inherits,5,False,67,True,3
+rich_3905,callproof calls+contains+inherits,10,False,134,True,3
+rich_3905,callproof calls+contains+inherits,20,False,210,True,3
+rich_3930,provided,0,False,3,True,3
+rich_3930,provided,5,False,59,True,3
+rich_3930,provided,10,False,64,True,3
+rich_3930,provided,20,False,82,True,3
+rich_3930,callproof all edges,0,False,3,True,3
+rich_3930,callproof all edges,5,False,89,True,3
+rich_3930,callproof all edges,10,False,136,True,3
+rich_3930,callproof all edges,20,False,175,True,3
+rich_3930,callproof calls+contains+inherits,0,False,3,True,3
+rich_3930,callproof calls+contains+inherits,5,False,87,True,3
+rich_3930,callproof calls+contains+inherits,10,False,110,True,3
+rich_3930,callproof calls+contains+inherits,20,False,140,True,3
+rich_3934,provided,0,False,3,True,3
+rich_3934,provided,5,False,31,True,3
+rich_3934,provided,10,False,123,True,3
+rich_3934,provided,20,False,255,True,3
+rich_3934,callproof all edges,0,False,3,True,3
+rich_3934,callproof all edges,5,False,99,True,3
+rich_3934,callproof all edges,10,False,162,True,3
+rich_3934,callproof all edges,20,False,304,True,3
+rich_3934,callproof calls+contains+inherits,0,False,3,True,3
+rich_3934,callproof calls+contains+inherits,5,False,67,True,3
+rich_3934,callproof calls+contains+inherits,10,False,140,True,3
+rich_3934,callproof calls+contains+inherits,20,False,258,True,3
+rich_3935,provided,0,False,3,True,3
+rich_3935,provided,5,False,29,True,3
+rich_3935,provided,10,False,99,True,3
+rich_3935,provided,20,False,183,True,3
+rich_3935,callproof all edges,0,False,3,True,3
+rich_3935,callproof all edges,5,False,94,True,3
+rich_3935,callproof all edges,10,False,154,True,3
+rich_3935,callproof all edges,20,False,257,True,3
+rich_3935,callproof calls+contains+inherits,0,False,3,True,3
+rich_3935,callproof calls+contains+inherits,5,False,62,True,3
+rich_3935,callproof calls+contains+inherits,10,False,132,True,3
+rich_3935,callproof calls+contains+inherits,20,False,210,True,3
+rich_3938,provided,0,True,3,True,3
+rich_3938,provided,5,True,31,True,3
+rich_3938,provided,10,True,121,True,3
+rich_3938,provided,20,True,215,True,3
+rich_3938,callproof all edges,0,True,3,True,3
+rich_3938,callproof all edges,5,True,131,True,3
+rich_3938,callproof all edges,10,True,189,True,3
+rich_3938,callproof all edges,20,True,241,True,3
+rich_3938,callproof calls+contains+inherits,0,True,3,True,3
+rich_3938,callproof calls+contains+inherits,5,True,103,True,3
+rich_3938,callproof calls+contains+inherits,10,True,167,True,3
+rich_3938,callproof calls+contains+inherits,20,True,202,True,3
+rich_3942,provided,0,False,3,True,3
+rich_3942,provided,5,False,15,True,3
+rich_3942,provided,10,True,40,True,3
+rich_3942,provided,20,True,51,True,3
+rich_3942,callproof all edges,0,False,3,True,3
+rich_3942,callproof all edges,5,False,17,True,3
+rich_3942,callproof all edges,10,False,31,True,3
+rich_3942,callproof all edges,20,True,140,True,3
+rich_3942,callproof calls+contains+inherits,0,False,3,True,3
+rich_3942,callproof calls+contains+inherits,5,False,16,True,3
+rich_3942,callproof calls+contains+inherits,10,False,30,True,3
+rich_3942,callproof calls+contains+inherits,20,True,116,True,3
+rich_3944,provided,0,False,3,True,3
+rich_3944,provided,5,False,32,True,3
+rich_3944,provided,10,False,124,True,3
+rich_3944,provided,20,False,257,True,3
+rich_3944,callproof all edges,0,False,3,True,3
+rich_3944,callproof all edges,5,False,99,True,3
+rich_3944,callproof all edges,10,False,162,True,3
+rich_3944,callproof all edges,20,False,306,True,3
+rich_3944,callproof calls+contains+inherits,0,False,3,True,3
+rich_3944,callproof calls+contains+inherits,5,False,67,True,3
+rich_3944,callproof calls+contains+inherits,10,False,142,True,3
+rich_3944,callproof calls+contains+inherits,20,False,259,True,3
+rich_3953,provided,0,False,3,True,3
+rich_3953,provided,5,False,32,True,3
+rich_3953,provided,10,False,124,True,3
+rich_3953,provided,20,False,257,True,3
+rich_3953,callproof all edges,0,False,3,True,3
+rich_3953,callproof all edges,5,False,99,True,3
+rich_3953,callproof all edges,10,False,162,True,3
+rich_3953,callproof all edges,20,False,306,True,3
+rich_3953,callproof calls+contains+inherits,0,False,3,True,3
+rich_3953,callproof calls+contains+inherits,5,False,67,True,3
+rich_3953,callproof calls+contains+inherits,10,False,142,True,3
+rich_3953,callproof calls+contains+inherits,20,False,259,True,3
+rich_4006,provided,0,True,3,True,3
+rich_4006,provided,5,True,31,True,3
+rich_4006,provided,10,True,75,True,3
+rich_4006,provided,20,True,162,True,3
+rich_4006,callproof all edges,0,True,3,True,3
+rich_4006,callproof all edges,5,True,94,True,3
+rich_4006,callproof all edges,10,True,157,True,3
+rich_4006,callproof all edges,20,True,233,True,3
+rich_4006,callproof calls+contains+inherits,0,True,3,True,3
+rich_4006,callproof calls+contains+inherits,5,True,62,True,3
+rich_4006,callproof calls+contains+inherits,10,True,137,True,3
+rich_4006,callproof calls+contains+inherits,20,True,192,True,3
+rich_4070,provided,0,True,3,True,3
+rich_4070,provided,5,True,29,True,3
+rich_4070,provided,10,True,46,True,3
+rich_4070,provided,20,True,73,True,3
+rich_4070,callproof all edges,0,True,3,True,3
+rich_4070,callproof all edges,5,True,26,True,3
+rich_4070,callproof all edges,10,True,77,True,3
+rich_4070,callproof all edges,20,True,215,True,3
+rich_4070,callproof calls+contains+inherits,0,True,3,True,3
+rich_4070,callproof calls+contains+inherits,5,True,23,True,3
+rich_4070,callproof calls+contains+inherits,10,True,61,True,3
+rich_4070,callproof calls+contains+inherits,20,True,175,True,3
+rich_4075,provided,0,False,3,True,3
+rich_4075,provided,5,False,32,True,3
+rich_4075,provided,10,False,124,True,3
+rich_4075,provided,20,False,257,True,3
+rich_4075,callproof all edges,0,False,3,True,3
+rich_4075,callproof all edges,5,False,99,True,3
+rich_4075,callproof all edges,10,False,162,True,3
+rich_4075,callproof all edges,20,True,306,True,3
+rich_4075,callproof calls+contains+inherits,0,False,3,True,3
+rich_4075,callproof calls+contains+inherits,5,False,67,True,3
+rich_4075,callproof calls+contains+inherits,10,False,142,True,3
+rich_4075,callproof calls+contains+inherits,20,True,259,True,3
+rich_4076,provided,0,False,3,True,3
+rich_4076,provided,5,False,26,True,3
+rich_4076,provided,10,False,112,True,3
+rich_4076,provided,20,False,146,True,3
+rich_4076,callproof all edges,0,False,3,True,3
+rich_4076,callproof all edges,5,False,89,True,3
+rich_4076,callproof all edges,10,False,152,True,3
+rich_4076,callproof all edges,20,False,272,True,3
+rich_4076,callproof calls+contains+inherits,0,False,3,True,3
+rich_4076,callproof calls+contains+inherits,5,False,58,True,3
+rich_4076,callproof calls+contains+inherits,10,False,133,True,3
+rich_4076,callproof calls+contains+inherits,20,False,214,True,3
+rich_4079,provided,0,False,3,True,3
+rich_4079,provided,5,False,29,True,3
+rich_4079,provided,10,False,79,True,3
+rich_4079,provided,20,False,160,True,3
+rich_4079,callproof all edges,0,False,3,True,3
+rich_4079,callproof all edges,5,False,100,True,3
+rich_4079,callproof all edges,10,False,161,True,3
+rich_4079,callproof all edges,20,False,250,True,3
+rich_4079,callproof calls+contains+inherits,0,False,3,True,3
+rich_4079,callproof calls+contains+inherits,5,False,70,True,3
+rich_4079,callproof calls+contains+inherits,10,False,143,True,3
+rich_4079,callproof calls+contains+inherits,20,False,195,True,3

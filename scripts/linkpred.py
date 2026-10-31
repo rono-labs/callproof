@@ -22,7 +22,7 @@ from callproof.graphio import load_graph  # noqa: E402
 from callproof.naming import RepoIndex  # noqa: E402
 from callproof.tools import graph_key  # noqa: E402
 
-ROOT = PROJECT.parent
+ROOT = Path.cwd()
 OUT = ROOT / "results" / "linkpred"
 GROUNDTRUTH = ROOT / "results" / "groundtruth"
 CALLPROOF_GRAPHS = ROOT / "results" / "graphs"

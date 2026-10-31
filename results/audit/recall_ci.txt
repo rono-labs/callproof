@@ -1,0 +1,15 @@
+           kind graph  recall  ci_low  ci_high  edges  tasks
+            all  prov   0.259   0.227    0.298   9576    114
+            all  ours   0.793   0.739    0.836   9576    114
+    self_method  prov   0.000   0.000    0.000   2459     86
+    self_method  ours   0.928   0.910    0.942   2459     86
+    constructor  prov   0.000   0.000    0.000   1093     99
+    constructor  ours   0.743   0.607    0.853   1093     99
+module_function  prov   0.743   0.717    0.769   3034    105
+module_function  ours   0.936   0.922    0.949   3034    105
+   cross_module  prov   0.319   0.285    0.363   4970    113
+   cross_module  ours   0.719   0.649    0.778   4970    113
+          async  prov   0.000   0.000    0.000    409     38
+          async  ours   0.724   0.651    0.801    409     38
+         nested  prov   0.175   0.145    0.207    819     90
+         nested  ours   0.603   0.536    0.676    819     90

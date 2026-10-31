@@ -1,0 +1,478 @@
+{
+ "split_repo": {
+  "train_pairs": 5001,
+  "test_pairs": 2361,
+  "hard_pairs": 814,
+  "timings_s": {
+   "pair_ranker": 24.017510652542114,
+   "gnn_ssl": 83.36168336868286,
+   "gnn_adj_ssl": 30.27259373664856,
+   "gnn_adj_scratch": 16.664525270462036,
+   "gnn_pair_ssl": 22.708069801330566
+  },
+  "lightgbm_importance": {
+   "cosine": 0.08008031089676688,
+   "bm25": 0.1691814958504797,
+   "same_module": 0.053658653466440234,
+   "same_class": 0.1002777112238878,
+   "distance": 0.1440305266072058,
+   "name_overlap": 0.020066159942356575,
+   "name_in_source": 0.3441136556210817,
+   "cand_log_degree": 0.039563419737497905,
+   "source_log_degree": 0.04902806665428338
+  },
+  "logistic_weights": {
+   "cosine": 0.4302161679050941,
+   "bm25": 0.13860967666755322,
+   "same_module": 0.3348710580178933,
+   "same_class": 0.03445282536055125,
+   "distance": -1.331759088944457,
+   "name_overlap": -0.2534331676794673,
+   "name_in_source": 1.0413584863965186,
+   "cand_log_degree": -0.8741747545085381,
+   "source_log_degree": 0.20574688064791183
+  },
+  "all": {
+   "provided adjacency": {
+    "macro_mrr": 0.34673672053274535,
+    "macro_hits@1": 0.1679537756908629,
+    "macro_hits@10": 0.5922259742327481,
+    "pooled_mrr": 0.3580197852299643,
+    "pooled_hits@1": 0.1687138218269095,
+    "pooled_hits@10": 0.6480809180936246,
+    "pairs": 2361,
+    "sources": 1181
+   },
+   "provided embeddings (cosine)": {
+    "macro_mrr": 0.15278488097899942,
+    "macro_hits@1": 0.08041769830508187,
+    "macro_hits@10": 0.3058622603288141,
+    "pooled_mrr": 0.14099480910207524,
+    "pooled_hits@1": 0.06367358463927714,
+    "pooled_hits@10": 0.31003811944091486,
+    "pairs": 2361,
+    "sources": 1181
+   },
+   "lexical (BM25)": {
+    "macro_mrr": 0.2795677007073215,
+    "macro_hits@1": 0.18704739728236763,
+    "macro_hits@10": 0.4654119571509495,
+    "pooled_mrr": 0.2460611023574221,
+    "pooled_hits@1": 0.15451550661207586,
+    "pooled_hits@10": 0.43327200118813847,
+    "pairs": 2361,
+    "sources": 1181
+   },
+   "callproof static calls": {
+    "macro_mrr": 0.7008224613365219,
+    "macro_hits@1": 0.6012741015660796,
+    "macro_hits@10": 0.8409872164931321,
+    "pooled_mrr": 0.6648816508837215,
+    "pooled_hits@1": 0.5240374019969968,
+    "pooled_hits@10": 0.8698236944792853,
+    "pairs": 2361,
+    "sources": 1181
+   },
+   "pair ranker: logistic regression": {
+    "macro_mrr": 0.6639293913543881,
+    "macro_hits@1": 0.543689039815204,
+    "macro_hits@10": 0.8533511671318615,
+    "pooled_mrr": 0.6324936695528439,
+    "pooled_hits@1": 0.4985175772977552,
+    "pooled_hits@10": 0.868276154171961,
+    "pairs": 2361,
+    "sources": 1181
+   },
+   "pair ranker: LightGBM": {
+    "macro_mrr": 0.600877433285141,
+    "macro_hits@1": 0.46311957400018366,
+    "macro_hits@10": 0.8220994865046517,
+    "pooled_mrr": 0.5858610645792482,
+    "pooled_hits@1": 0.4362558238034731,
+    "pooled_hits@10": 0.8439220669207963,
+    "pairs": 2361,
+    "sources": 1181
+   },
+   "GraphSAGE self-supervised on edges": {
+    "macro_mrr": 0.0337437675012684,
+    "macro_hits@1": 0.0004233700254022015,
+    "macro_hits@10": 0.09057865175562042,
+    "pooled_mrr": 0.027874621099615544,
+    "pooled_hits@1": 0.0008470986869970351,
+    "pooled_hits@10": 0.06437950021177467,
+    "pairs": 2361,
+    "sources": 1181
+   },
+   "GraphSAGE self-supervised + fine-tuned on labels (decoder sees edge bit)": {
+    "macro_mrr": 0.37391700019780383,
+    "macro_hits@1": 0.21519763988011237,
+    "macro_hits@10": 0.5939597752891572,
+    "pooled_mrr": 0.3581333339373705,
+    "pooled_hits@1": 0.16857263871241,
+    "pooled_hits@10": 0.6488775942397289,
+    "pairs": 2361,
+    "sources": 1181
+   },
+   "GraphSAGE trained on labels only (decoder sees edge bit)": {
+    "macro_mrr": 0.3685960332441507,
+    "macro_hits@1": 0.1991787965539024,
+    "macro_hits@10": 0.626226619368025,
+    "pooled_mrr": 0.3600662240346963,
+    "pooled_hits@1": 0.17365523083439222,
+    "pooled_hits@10": 0.663701821262177,
+    "pairs": 2361,
+    "sources": 1181
+   },
+   "GraphSAGE self-supervised + fine-tuned, decoder also gets pair features": {
+    "macro_mrr": 0.6718659893738529,
+    "macro_hits@1": 0.5485449798108561,
+    "macro_hits@10": 0.8636939878260793,
+    "pooled_mrr": 0.6432461070122073,
+    "pooled_hits@1": 0.504870817450233,
+    "pooled_hits@10": 0.8695468022024566,
+    "pairs": 2361,
+    "sources": 1181
+   }
+  },
+  "hard": {
+   "provided adjacency": {
+    "macro_mrr": 0.007862116099524573,
+    "macro_hits@1": 0.0,
+    "macro_hits@10": 0.009562841530054645,
+    "pooled_mrr": 0.007148075114576717,
+    "pooled_hits@1": 0.0,
+    "pooled_hits@10": 0.007166257166257166,
+    "pairs": 814,
+    "sources": 610
+   },
+   "provided embeddings (cosine)": {
+    "macro_mrr": 0.09120155270626551,
+    "macro_hits@1": 0.05122950819672131,
+    "macro_hits@10": 0.16434426229508198,
+    "pooled_mrr": 0.07649611183869308,
+    "pooled_hits@1": 0.040950040950040956,
+    "pooled_hits@10": 0.1375921375921376,
+    "pairs": 814,
+    "sources": 610
+   },
+   "lexical (BM25)": {
+    "macro_mrr": 0.1422415948342433,
+    "macro_hits@1": 0.10394808743169398,
+    "macro_hits@10": 0.21287399758711237,
+    "pooled_mrr": 0.1405136697457624,
+    "pooled_hits@1": 0.10077805077805077,
+    "pooled_hits@10": 0.20952726634544813,
+    "pairs": 814,
+    "sources": 610
+   },
+   "callproof static calls": {
+    "macro_mrr": 0.4503388675770109,
+    "macro_hits@1": 0.32601441598376296,
+    "macro_hits@10": 0.6226920779411759,
+    "pooled_mrr": 0.4131444695033211,
+    "pooled_hits@1": 0.2671179558619402,
+    "pooled_hits@10": 0.6245546792375419,
+    "pairs": 814,
+    "sources": 610
+   },
+   "pair ranker: logistic regression": {
+    "macro_mrr": 0.39042462076280166,
+    "macro_hits@1": 0.2617486338797814,
+    "macro_hits@10": 0.6459016393442623,
+    "pooled_mrr": 0.3886447684021838,
+    "pooled_hits@1": 0.2457002457002457,
+    "pooled_hits@10": 0.6621621621621622,
+    "pairs": 814,
+    "sources": 610
+   },
+   "pair ranker: LightGBM": {
+    "macro_mrr": 0.38798533657880374,
+    "macro_hits@1": 0.2598360655737705,
+    "macro_hits@10": 0.6283879781420764,
+    "pooled_mrr": 0.39344302455464775,
+    "pooled_hits@1": 0.257985257985258,
+    "pooled_hits@10": 0.6461916461916462,
+    "pairs": 814,
+    "sources": 610
+   },
+   "GraphSAGE self-supervised on edges": {
+    "macro_mrr": 0.02015185015201479,
+    "macro_hits@1": 0.001639344262295082,
+    "macro_hits@10": 0.01612021857923497,
+    "pooled_mrr": 0.02107329110479823,
+    "pooled_hits@1": 0.002457002457002457,
+    "pooled_hits@10": 0.019656019656019656,
+    "pairs": 814,
+    "sources": 610
+   },
+   "GraphSAGE self-supervised + fine-tuned on labels (decoder sees edge bit)": {
+    "macro_mrr": 0.012527897176156842,
+    "macro_hits@1": 0.0,
+    "macro_hits@10": 0.010655737704918032,
+    "pooled_mrr": 0.011357150636426117,
+    "pooled_hits@1": 0.0,
+    "pooled_hits@10": 0.009828009828009828,
+    "pairs": 814,
+    "sources": 610
+   },
+   "GraphSAGE trained on labels only (decoder sees edge bit)": {
+    "macro_mrr": 0.025576328211173418,
+    "macro_hits@1": 0.0,
+    "macro_hits@10": 0.07704918032786885,
+    "pooled_mrr": 0.02100453499235416,
+    "pooled_hits@1": 0.0,
+    "pooled_hits@10": 0.05773955773955774,
+    "pairs": 814,
+    "sources": 610
+   },
+   "GraphSAGE self-supervised + fine-tuned, decoder also gets pair features": {
+    "macro_mrr": 0.39358810219295487,
+    "macro_hits@1": 0.26338797814207654,
+    "macro_hits@10": 0.6435792349726777,
+    "pooled_mrr": 0.3841957067446734,
+    "pooled_hits@1": 0.2457002457002457,
+    "pooled_hits@10": 0.6523341523341524,
+    "pairs": 814,
+    "sources": 610
+   }
+  }
+ },
+ "split_random": {
+  "train_pairs": 5667,
+  "test_pairs": 1695,
+  "hard_pairs": 1261,
+  "timings_s": {
+   "pair_ranker": 27.545464992523193,
+   "gnn_ssl": 57.25676870346069,
+   "gnn_adj_ssl": 19.041767358779907,
+   "gnn_adj_scratch": 18.3664288520813,
+   "gnn_pair_ssl": 21.460798025131226
+  },
+  "lightgbm_importance": {
+   "cosine": 0.0609291177581428,
+   "bm25": 0.12458665424801249,
+   "same_module": 0.03024097377216892,
+   "same_class": 0.07147008629491354,
+   "distance": 0.2776451397798244,
+   "name_overlap": 0.017629868866756822,
+   "name_in_source": 0.3494032905259135,
+   "cand_log_degree": 0.031071446106130975,
+   "source_log_degree": 0.03702342264813654
+  },
+  "logistic_weights": {
+   "cosine": 0.8229989846375092,
+   "bm25": 0.16263948559869482,
+   "same_module": 0.4495616028137131,
+   "same_class": -0.04949537682991013,
+   "distance": -1.1164688241416478,
+   "name_overlap": -0.15518084386685266,
+   "name_in_source": 0.9047924842645594,
+   "cand_log_degree": -0.6082801011118625,
+   "source_log_degree": 0.11832712880310235
+  },
+  "all": {
+   "provided adjacency": {
+    "macro_mrr": 0.13883227931133044,
+    "macro_hits@1": 0.05549830286672392,
+    "macro_hits@10": 0.2544356946018996,
+    "pooled_mrr": 0.12609568479570402,
+    "pooled_hits@1": 0.04375614552605703,
+    "pooled_hits@10": 0.2542379547689282,
+    "pairs": 1695,
+    "sources": 741
+   },
+   "provided embeddings (cosine)": {
+    "macro_mrr": 0.08959682192454285,
+    "macro_hits@1": 0.044061055903161166,
+    "macro_hits@10": 0.18578264196205813,
+    "pooled_mrr": 0.07164675832207563,
+    "pooled_hits@1": 0.032448377581120944,
+    "pooled_hits@10": 0.1486725663716814,
+    "pairs": 1695,
+    "sources": 741
+   },
+   "lexical (BM25)": {
+    "macro_mrr": 0.22667746527761407,
+    "macro_hits@1": 0.14281751387014546,
+    "macro_hits@10": 0.3849020290451756,
+    "pooled_mrr": 0.14860052144858193,
+    "pooled_hits@1": 0.08607341855129466,
+    "pooled_hits@10": 0.2692018380331759,
+    "pairs": 1695,
+    "sources": 741
+   },
+   "callproof static calls": {
+    "macro_mrr": 0.6251407315029595,
+    "macro_hits@1": 0.475800609668085,
+    "macro_hits@10": 0.8632975956723592,
+    "pooled_mrr": 0.5203253507217566,
+    "pooled_hits@1": 0.33017896608338493,
+    "pooled_hits@10": 0.854041486003951,
+    "pairs": 1695,
+    "sources": 741
+   },
+   "pair ranker: logistic regression": {
+    "macro_mrr": 0.5467953276747545,
+    "macro_hits@1": 0.4204940920527965,
+    "macro_hits@10": 0.7817965654157856,
+    "pooled_mrr": 0.46467093220114314,
+    "pooled_hits@1": 0.32212389380530976,
+    "pooled_hits@10": 0.7427728613569321,
+    "pairs": 1695,
+    "sources": 741
+   },
+   "pair ranker: LightGBM": {
+    "macro_mrr": 0.7115561922875067,
+    "macro_hits@1": 0.5981961469842356,
+    "macro_hits@10": 0.9079482160080924,
+    "pooled_mrr": 0.6415689906780546,
+    "pooled_hits@1": 0.5035398230088496,
+    "pooled_hits@10": 0.8846307651513273,
+    "pairs": 1695,
+    "sources": 741
+   },
+   "GraphSAGE self-supervised on edges": {
+    "macro_mrr": 0.02125711068548837,
+    "macro_hits@1": 0.0035987404408457037,
+    "macro_hits@10": 0.04380341880341881,
+    "pooled_mrr": 0.01743597390249454,
+    "pooled_hits@1": 0.002359882005899705,
+    "pooled_hits@10": 0.03126843657817109,
+    "pairs": 1695,
+    "sources": 741
+   },
+   "GraphSAGE self-supervised + fine-tuned on labels (decoder sees edge bit)": {
+    "macro_mrr": 0.2574905909314133,
+    "macro_hits@1": 0.19296323768409857,
+    "macro_hits@10": 0.3835362237024287,
+    "pooled_mrr": 0.2309526019930384,
+    "pooled_hits@1": 0.1696165191740413,
+    "pooled_hits@10": 0.343952802359882,
+    "pairs": 1695,
+    "sources": 741
+   },
+   "GraphSAGE trained on labels only (decoder sees edge bit)": {
+    "macro_mrr": 0.24820432507987628,
+    "macro_hits@1": 0.18174440328712646,
+    "macro_hits@10": 0.37249687318939395,
+    "pooled_mrr": 0.22425225916133137,
+    "pooled_hits@1": 0.1640117994100295,
+    "pooled_hits@10": 0.3345132743362832,
+    "pairs": 1695,
+    "sources": 741
+   },
+   "GraphSAGE self-supervised + fine-tuned, decoder also gets pair features": {
+    "macro_mrr": 0.6018930606423788,
+    "macro_hits@1": 0.48295781272022487,
+    "macro_hits@10": 0.8096249359939962,
+    "pooled_mrr": 0.5182022773974766,
+    "pooled_hits@1": 0.3775811209439528,
+    "pooled_hits@10": 0.7610619469026548,
+    "pairs": 1695,
+    "sources": 741
+   }
+  },
+  "hard": {
+   "provided adjacency": {
+    "macro_mrr": 0.003393434631082943,
+    "macro_hits@1": 0.0,
+    "macro_hits@10": 0.002182214948172395,
+    "pooled_mrr": 0.0027569258059454995,
+    "pooled_hits@1": 0.0,
+    "pooled_hits@10": 0.00105736188210415,
+    "pairs": 1261,
+    "sources": 611
+   },
+   "provided embeddings (cosine)": {
+    "macro_mrr": 0.06543164528260255,
+    "macro_hits@1": 0.03194217130387343,
+    "macro_hits@10": 0.1301023444640466,
+    "pooled_mrr": 0.048606978793437866,
+    "pooled_hits@1": 0.022997620935765267,
+    "pooled_hits@10": 0.0943695479777954,
+    "pairs": 1261,
+    "sources": 611
+   },
+   "lexical (BM25)": {
+    "macro_mrr": 0.18380121478610797,
+    "macro_hits@1": 0.1179214402618658,
+    "macro_hits@10": 0.30280959688343917,
+    "pooled_mrr": 0.12072602439608901,
+    "pooled_hits@1": 0.07167591858313509,
+    "pooled_hits@10": 0.20972544181831868,
+    "pairs": 1261,
+    "sources": 611
+   },
+   "callproof static calls": {
+    "macro_mrr": 0.5321448138350588,
+    "macro_hits@1": 0.3627745420363996,
+    "macro_hits@10": 0.807943023527525,
+    "pooled_mrr": 0.4303906275482678,
+    "pooled_hits@1": 0.22542465532789868,
+    "pooled_hits@10": 0.8047555490468878,
+    "pairs": 1261,
+    "sources": 611
+   },
+   "pair ranker: logistic regression": {
+    "macro_mrr": 0.4763452823420229,
+    "macro_hits@1": 0.3591764618360363,
+    "macro_hits@10": 0.7024901812135854,
+    "pooled_mrr": 0.40932331975496405,
+    "pooled_hits@1": 0.2712133227597145,
+    "pooled_hits@10": 0.6653449643140364,
+    "pairs": 1261,
+    "sources": 611
+   },
+   "pair ranker: LightGBM": {
+    "macro_mrr": 0.6361686512971481,
+    "macro_hits@1": 0.5037582393965373,
+    "macro_hits@10": 0.8769835857601814,
+    "pooled_mrr": 0.569446894875018,
+    "pooled_hits@1": 0.41712926249008725,
+    "pooled_hits@10": 0.8449239864643139,
+    "pairs": 1261,
+    "sources": 611
+   },
+   "GraphSAGE self-supervised on edges": {
+    "macro_mrr": 0.009391557108722632,
+    "macro_hits@1": 0.0016366612111292963,
+    "macro_hits@10": 0.010911074740861974,
+    "pooled_mrr": 0.007029766863420829,
+    "pooled_hits@1": 0.0007930214115781126,
+    "pooled_hits@10": 0.007137192704203013,
+    "pairs": 1261,
+    "sources": 611
+   },
+   "GraphSAGE self-supervised + fine-tuned on labels (decoder sees edge bit)": {
+    "macro_mrr": 0.06706200539705792,
+    "macro_hits@1": 0.029459901800327332,
+    "macro_hits@10": 0.1692736341672512,
+    "pooled_mrr": 0.04480170941007455,
+    "pooled_hits@1": 0.014274385408406027,
+    "pooled_hits@10": 0.12212529738302934,
+    "pairs": 1261,
+    "sources": 611
+   },
+   "GraphSAGE trained on labels only (decoder sees edge bit)": {
+    "macro_mrr": 0.05687630623990387,
+    "macro_hits@1": 0.016366612111292964,
+    "macro_hits@10": 0.15477359519912712,
+    "pooled_mrr": 0.03836252801032928,
+    "pooled_hits@1": 0.007930214115781126,
+    "pooled_hits@10": 0.11102299762093576,
+    "pairs": 1261,
+    "sources": 611
+   },
+   "GraphSAGE self-supervised + fine-tuned, decoder also gets pair features": {
+    "macro_mrr": 0.5135440952719569,
+    "macro_hits@1": 0.39452444718402163,
+    "macro_hits@10": 0.7354638269531887,
+    "pooled_mrr": 0.44548292828796837,
+    "pooled_hits@1": 0.31007137192704204,
+    "pooled_hits@10": 0.6835844567803331,
+    "pairs": 1261,
+    "sources": 611
+   }
+  }
+ }
+}
