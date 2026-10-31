@@ -27,6 +27,7 @@ competition dataset and must be obtained from it under its terms.
 
 ## Reproduce
 
-    export CALLPROOF_DATA=<competition data dir> CALLPROOF_CACHE=<cache dir>
-    python project/scripts/linkpred.py build   # needs results/groundtruth and results/graphs
-    python project/scripts/linkpred.py eval
+    export CALLPROOF_DATA=<competition data dir> CALLPROOF_CACHE=<cache dir>   # run from the repository root
+    python scripts/linkpred.py build   # needs results/groundtruth and results/graphs
+    python scripts/linkpred.py eval
+    python scripts/linkpred_learned.py   # logistic regression, LightGBM, GraphSAGE

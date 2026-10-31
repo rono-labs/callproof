@@ -1,6 +1,6 @@
 # Callproof
 
-Test-execution traces as ground truth for the code graphs coding agents navigate: an audit of the Gemma 4 Developer Agent graphs, an open drop-in builder that links 79% of traced calls instead of 26%, and the CallproofLP link-prediction benchmark.
+Test-execution traces as ground truth for the code graphs coding agents navigate: an audit of the Gemma 4 Developer Agent graphs, an open builder in the same schema that links 79% of traced calls instead of 26%, and the CallproofLP link-prediction benchmark.
 
 ![Executed call edges linked by the provided graphs and by Callproof](docs/thumbnail.png)
 
@@ -42,7 +42,7 @@ A negative result is reported too: plain BM25 and PageRank localization do not i
 
 - Records dynamic call edges with a `sys.monitoring` tracer while the fail-to-pass tests of a task run, and extracts the functions the gold patch edits (`callproof/trace.py`, `callproof/patch.py`).
 - Audits the provided graphs against those edges and against the source text: missing nodes, id collisions, edge direction, edge semantics, embedding coverage (`scripts/audit_static.py`).
-- Builds a drop-in graph for any Python checkout with a static analyser: every module, class and function (including async and nested ones), directed `calls`, `inherits`, `imports`, `references` and `decorated_by` edges, in the competition's node-link JSON schema (`python -m callproof.build`).
+- Builds a graph in the competition's schema for any Python checkout with a static analyser: every module, class and function (including async and nested ones), directed `calls`, `inherits`, `imports`, `references` and `decorated_by` edges, in the competition's node-link JSON schema (`python -m callproof.build`).
 - Ships a small localization harness that runs Gemma 4 E2B/E4B through `llama.cpp` with the competition's three graph tools, on either graph, and scores the answers (`scripts/run_localize.py`, `callproof/localize_eval.py`).
 
 ## Try it
@@ -71,7 +71,7 @@ A typical checkout builds in a few seconds.
 
 ## How it works
 
-The provided graphs are static and were never compared with what code does at run time, so Callproof starts from execution. For each of the 129 tasks it builds a Python 3.13 environment from the competition wheels, applies the test patch, runs the fail-to-pass tests with the gold patch applied, and keeps the caller to callee pairs that stay inside the repository. Gold-edited functions come from mapping patch hunks to the enclosing definitions at the base commit. The audit then asks, for each traced edge, whether the provided graph links the two functions in the right direction, and does the same for graphs from the new builder. The builder is a single-pass AST resolver: it tracks imports and re-exports, the class hierarchy (so `self.method()` resolves along the MRO), instance types it can infer from constructors and annotations, decorators, properties and async calls, and it writes ids as `module.dotted.qualname` with one edge per direction of meaning.
+The provided graphs are static and were never compared with what code does at run time, so Callproof starts from execution. For each of the 129 tasks it builds a Python 3.13 environment from the competition wheels, applies the test patch, runs the fail-to-pass tests with the gold patch applied, and keeps the caller to callee pairs that stay inside the repository. Gold-edited functions come from mapping patch hunks to the enclosing definitions at the base commit. The audit then asks, for each traced edge, whether the provided graph links the two functions in the right direction, and does the same for graphs from the new builder. The builder is a two-pass AST resolver (index every definition, then resolve call sites): it tracks imports and re-exports, the class hierarchy (so `self.method()` resolves along the MRO), instance types it can infer from constructors and annotations, decorators, properties and async calls, and it writes ids as `module.dotted.qualname` with one edge per direction of meaning.
 
 ## Reproduce
 
