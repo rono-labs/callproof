@@ -40,6 +40,23 @@ def graph_calls(episode: dict) -> tuple[int, int]:
     return sum(c.get("name") != "read_file" for c in calls), len(calls)
 
 
+def graph_misses(episode: dict) -> tuple[int, int]:
+    """Graph tool results that came back empty or as NodeNotFound, and all graph tool results."""
+    misses = total = 0
+    for message in episode.get("messages", []):
+        if message.get("role") != "tool":
+            continue
+        try:
+            result = json.loads(message.get("content") or "")
+        except json.JSONDecodeError:
+            continue
+        if not isinstance(result, dict) or not ({"neighbors", "outgoing", "nodes"} & result.keys() or result.get("error_type") == "NodeNotFound"):
+            continue
+        total += 1
+        misses += result.get("error_type") == "NodeNotFound" or not (result.get("count") or result.get("node_count"))
+    return misses, total
+
+
 def sign_test(wins: int, losses: int) -> float:
     n = wins + losses
     if n == 0:
@@ -61,7 +78,7 @@ def main() -> None:
     rows: dict[str, dict[str, list[bool]]] = {}
     for name, episodes in runs.items():
         metrics: dict[str, list[bool]] = {"func@1": [], "func@5": [], "file@5": [], "surfaced": [], "read_gold_file": [], "empty": []}
-        graph_total = all_total = 0
+        graph_total = all_total = miss_total = result_total = 0
         for instance in shared:
             gold, _ = load_gold(tasks[instance], dataset)
             if not any(g["kind"] != "added" and g["qualname"] != patch_tools.MODULE for g in gold):
@@ -76,8 +93,11 @@ def main() -> None:
             metrics["empty"].append(not episode["predictions"])
             graph, total = graph_calls(episode)
             graph_total, all_total = graph_total + graph, all_total + total
+            misses, results = graph_misses(episode)
+            miss_total, result_total = miss_total + misses, result_total + results
         rows[name] = metrics
-        print(f"{name}: {all_total} tool calls, {graph_total} graph calls ({graph_total / max(all_total, 1):.1%})")
+        print(f"{name}: {all_total} tool calls, {graph_total} graph calls ({graph_total / max(all_total, 1):.1%}), "
+              f"{miss_total}/{result_total} graph results empty or not found")
     n = len(next(iter(rows.values()))["func@1"])
     print(f"{len(shared)} shared tasks, {n} with a modified gold function")
     for name, metrics in rows.items():
