@@ -31,9 +31,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from callproof import audit  # noqa: E402
 from callproof.build import GraphBuilder  # noqa: E402
 from callproof.naming import RepoIndex, parse_checkout  # noqa: E402
+from callproof.paths import resolve_cache  # noqa: E402
 from provided_style import build_provided_style  # noqa: E402
 
-WORK = Path(".cache/work/general")
+WORK = resolve_cache() / "general"
 RESULTS = Path("results/generality")
 LOGS = Path("logs/generality")
 MAX_TESTS = 300
