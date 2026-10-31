@@ -38,6 +38,8 @@ Full tables, including logistic regression and GraphSAGE with pair features: [`r
 
 A negative result is reported too: plain BM25 and PageRank localization do not improve with the better graph ([`results/loc/baselines_eval.txt`](results/loc/baselines_eval.txt)).
 
+With Gemma 4 E4B as a tool-using agent (58 paired tasks, 10 calls), Callproof graphs with direction-split neighbor listings show the agent an edited function more often (34.5% vs 22.4% of tasks, sign test p = .04), but its answers do not improve (function Acc@5 .379 vs .431, not significant). See [`results/loc/e9d_paired.txt`](results/loc/e9d_paired.txt).
+
 ## What it does
 
 - Records dynamic call edges with a `sys.monitoring` tracer while the fail-to-pass tests of a task run, and extracts the functions the gold patch edits (`callproof/trace.py`, `callproof/patch.py`).
