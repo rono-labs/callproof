@@ -1,0 +1,18 @@
+e9d_provided: 373 tool calls, 146 graph calls (39.1%), 25/146 graph results empty or not found
+e9d_callproof_typed: 391 tool calls, 158 graph calls (40.4%), 28/158 graph results empty or not found
+base_bm25_provided_notests: 0 tool calls, 0 graph calls (0.0%), 0/0 graph results empty or not found
+58 shared tasks, 58 with a modified gold function
+e9d_provided {'func@1': 0.328, 'func@5': 0.431, 'file@5': 0.638, 'surfaced': 0.224, 'read_gold_file': 0.672, 'empty': 0.017}
+e9d_callproof_typed {'func@1': 0.293, 'func@5': 0.379, 'file@5': 0.638, 'surfaced': 0.345, 'read_gold_file': 0.655, 'empty': 0.0}
+base_bm25_provided_notests {'func@1': 0.19, 'func@5': 0.448, 'file@5': 0.655, 'surfaced': 0.0, 'read_gold_file': 0.0, 'empty': 0.0}
+e9d_callproof_typed vs e9d_provided func@1: +1 / -3, sign test p=0.625
+e9d_callproof_typed vs e9d_provided func@5: +1 / -4, sign test p=0.375
+e9d_callproof_typed vs e9d_provided file@5: +2 / -2, sign test p=1.000
+e9d_callproof_typed vs e9d_provided surfaced: +8 / -1, sign test p=0.039
+e9d_callproof_typed vs e9d_provided read_gold_file: +1 / -2, sign test p=1.000
+base_bm25_provided_notests vs e9d_provided func@1: +1 / -9, sign test p=0.021
+base_bm25_provided_notests vs e9d_provided func@5: +3 / -2, sign test p=1.000
+base_bm25_provided_notests vs e9d_provided file@5: +5 / -4, sign test p=1.000
+base_bm25_provided_notests vs e9d_provided surfaced: +0 / -13, sign test p=0.000
+base_bm25_provided_notests vs e9d_provided read_gold_file: +0 / -39, sign test p=0.000
+{"e9d_provided": {"func@1": 0.3275862068965517, "func@5": 0.43103448275862066, "file@5": 0.6379310344827587, "surfaced": 0.22413793103448276, "read_gold_file": 0.6724137931034483, "empty": 0.017241379310344827}, "e9d_callproof_typed": {"func@1": 0.29310344827586204, "func@5": 0.3793103448275862, "file@5": 0.6379310344827587, "surfaced": 0.3448275862068966, "read_gold_file": 0.6551724137931034, "empty": 0.0}, "base_bm25_provided_notests": {"func@1": 0.1896551724137931, "func@5": 0.4482758620689655, "file@5": 0.6551724137931034, "surfaced": 0.0, "read_gold_file": 0.0, "empty": 0.0}}
