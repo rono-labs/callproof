@@ -19,6 +19,7 @@ SYSTEM_PROMPT = (
     "base commit). Explore with the tools, using at most {budget} tool calls. When done, reply with ONLY a JSON "
     'list of up to 5 strings "path::qualname" (path relative to the repository root, qualname such as '
     '"Class.method" or "function"), best candidate first. Example: ["fastapi/routing.py::APIRoute.__init__"]. '
+    "Always give 5 candidates, even when unsure: an educated guess scores better than an empty list. "
     "Graph tools name symbols as dotted ids (module.Class.method); those are also accepted as answers. "
     "Do not propose fixes or write code, and keep any reply outside tool calls to the JSON list."
 )
@@ -193,13 +194,13 @@ class LocalizationAgent:
                     messages.append({"role": "tool", "tool_call_id": call.get("id", ""), "content": result})
                 if len(calls) >= cfg.budget or near_limit:
                     force_final = True
-                    messages.append({"role": "user", "content": "No more tool calls. Reply now with the final JSON list."})
+                    messages.append({"role": "user", "content": "No more tool calls. Reply now with the final JSON list of 5 candidates."})
                 continue
             answer_text = content
             if parse_answer(content) or force_final:
                 break
             force_final = True
-            messages.append({"role": "user", "content": "Reply now with only the final JSON list of path::qualname."})
+            messages.append({"role": "user", "content": "Reply now with only the final JSON list of 5 path::qualname candidates."})
         predictions: list[str] = []
         for item in parse_answer(answer_text):
             normalized = repo.normalize(item)
