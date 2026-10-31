@@ -55,8 +55,8 @@ def is_test_path(path: str) -> bool:
 class RepoIndex:
     """Function nodes of one task's graph with BM25 over name + source text."""
 
-    def __init__(self, graph: nx.MultiDiGraph, repo: Repo):
-        self.graph, self.repo = graph, repo
+    def __init__(self, graph: nx.MultiDiGraph, repo: Repo, edge_types: set[str] | None = None):
+        self.graph, self.repo, self.edge_types = graph, repo, edge_types
         self.nodes: list[str] = []
         self.texts: list[str] = []
         for node, attrs in graph.nodes(data=True):
@@ -72,7 +72,7 @@ class RepoIndex:
     def ppr_scores(self, seed_scores: np.ndarray, seeds: int = 5, damping: float = 0.5, iterations: int = 40) -> np.ndarray:
         """Personalized PageRank on the undirected graph restarting at the top-`seeds` BM25 nodes."""
         position = {n: i for i, n in enumerate(map(str, self.graph.nodes()))}
-        edges = np.array([(position[str(u)], position[str(v)]) for u, v in self.graph.edges()], dtype=np.int64).reshape(-1, 2)
+        edges = np.array([(position[str(u)], position[str(v)]) for u, v, kind in self.graph.edges(data="type") if self.edge_types is None or kind in self.edge_types], dtype=np.int64).reshape(-1, 2)
         src = np.concatenate([edges[:, 0], edges[:, 1]])
         dst = np.concatenate([edges[:, 1], edges[:, 0]])
         degree = np.bincount(src, minlength=len(position)).astype(np.float64)
@@ -121,12 +121,12 @@ def load_dense_model():
     return SentenceTransformer(DENSE_MODEL, device="cpu")
 
 
-def run(method: str, dataset: Dataset, exclude_tests: bool, ids: list[str] | None = None) -> list[dict]:
+def run(method: str, dataset: Dataset, exclude_tests: bool, ids: list[str] | None = None, edge_types: set[str] | None = None) -> list[dict]:
     model = load_dense_model() if method == "dense" else None
     records = []
     for task in dataset.tasks(ids):
         repo = dataset.repo(task)
-        index = RepoIndex(dataset.code_graph(task).graph, repo)
+        index = RepoIndex(dataset.code_graph(task).graph, repo, edge_types)
         query = issue_query(task)
         scores = index.bm25_scores(query)
         if method == "ppr":
@@ -142,13 +142,14 @@ def main() -> None:
     parser.add_argument("--method", choices=("bm25", "ppr", "dense"), required=True)
     parser.add_argument("--graph", default="provided", help="'provided' or a directory of <repo>_<commit>.json graphs")
     parser.add_argument("--exclude-tests", action="store_true", help="drop test and docs_src files from candidates")
+    parser.add_argument("--edge-types", nargs="*", help="restrict PageRank to these edge types")
     parser.add_argument("--run-name", required=True)
     parser.add_argument("--ids", nargs="*")
     parser.add_argument("--data-dir", type=Path, default=DEFAULT_DATA_DIR)
     parser.add_argument("--out-dir", type=Path, default=Path("results/loc"))
     args = parser.parse_args()
     dataset = Dataset(args.data_dir, None if args.graph == "provided" else Path(args.graph))
-    records = run(args.method, dataset, args.exclude_tests, args.ids)
+    records = run(args.method, dataset, args.exclude_tests, args.ids, set(args.edge_types) if args.edge_types else None)
     run_dir = args.out_dir / args.run_name
     run_dir.mkdir(parents=True, exist_ok=True)
     with open(run_dir / "episodes.jsonl", "w", encoding="utf-8") as handle:
