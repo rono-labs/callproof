@@ -56,9 +56,9 @@ REPOS = (
     Repo("click", "https://github.com/pallets/click", "8.5.0"),
     Repo("attrs", "https://github.com/python-attrs/attrs", "26.1.0", ("hypothesis",)),
     Repo("more-itertools", "https://github.com/more-itertools/more-itertools", "v11.2.1"),
-    Repo("packaging", "https://github.com/pypa/packaging", "26.3", ("pretend", "tomli-w")),
+    Repo("packaging", "https://github.com/pypa/packaging", "26.3", ("pretend", "tomli-w", "hypothesis")),
     Repo("itsdangerous", "https://github.com/pallets/itsdangerous", "2.2.0", ("freezegun",)),
-    Repo("h11", "https://github.com/python-hyper/h11", "v0.16.0"),
+    Repo("h11", "https://github.com/python-hyper/h11", "v0.16.0", test_args=("h11/tests",)),
 )
 
 
@@ -278,17 +278,20 @@ def write_reports(results: list[RepoResult], pins: list[dict], traced: dict[str,
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.split("\n\n")[0])
     parser.add_argument("stages", nargs="*", default=["setup", "trace", "report"], choices=["setup", "trace", "report"])
+    parser.add_argument("--only", nargs="+", metavar="REPO", help="restrict setup and trace to these repositories")
     parser.add_argument("--jobs", type=int, default=3, help="repositories processed concurrently (at most 6)")
     args = parser.parse_args()
     jobs = min(args.jobs, 6)
     manifest = WORK / "manifest.json"
     state = json.loads(manifest.read_text()) if manifest.exists() else {"pins": [], "traced": {}}
     WORK.mkdir(parents=True, exist_ok=True)
+    chosen = [r for r in REPOS if not args.only or r.name in args.only]
     with ThreadPoolExecutor(jobs) as pool:
         if "setup" in args.stages:
-            state["pins"] = list(pool.map(setup_repo, REPOS))
+            pins = {p["repo"]: p for p in state["pins"]} | {p["repo"]: p for p in pool.map(setup_repo, chosen)}
+            state["pins"] = [pins[r.name] for r in REPOS if r.name in pins]
         if "trace" in args.stages:
-            state["traced"] = {r["repo"]: r for r in pool.map(trace_repo, REPOS)}
+            state["traced"] |= {r["repo"]: r for r in pool.map(trace_repo, chosen)}
     manifest.write_text(json.dumps(state, indent=1))
     if "report" in args.stages:
         results = [evaluate_repo(repo) for repo in REPOS]

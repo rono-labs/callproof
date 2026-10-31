@@ -92,9 +92,10 @@ def build_provided_style(index: RepoIndex, repo_name: str = "") -> nx.MultiDiGra
                 target = resolver.resolve(module, name) if name else None
                 link(definition.harness_id, target.harness_id if target else None)
             for child in node.body:
-                method = f"{definition.harness_id}.{child.name}"
-                if isinstance(child, ast.FunctionDef) and method in graph:
-                    link(definition.harness_id, method)
+                if isinstance(child, ast.FunctionDef):
+                    method = f"{definition.harness_id}.{child.name}"
+                    if method in graph:
+                        link(definition.harness_id, method)
             continue
         for sub in ast.walk(node):
             if isinstance(sub, ast.Call) and isinstance(sub.func, ast.Name):
