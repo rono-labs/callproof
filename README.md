@@ -49,10 +49,10 @@ from callproof.tools import CodeGraph
 
 graph = CodeGraph(Path("graph.json"), None, "myrepo_demo")
 print(graph.get_code_neighbors("mypackage.module.Class.method"))
-print(graph.search_similar_code("redirect handling", k=5))
+print(graph.get_code_subgraph(["mypackage.module.Class.method", "mypackage.module.helper"]))
 ```
 
-Without an embeddings file, `search_similar_code` falls back to lexical matching. A typical checkout builds in a few seconds.
+A typical checkout builds in a few seconds.
 
 ## How it works
 
