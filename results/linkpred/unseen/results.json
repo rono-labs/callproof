@@ -1,0 +1,766 @@
+{
+ "train_pairs": 7362,
+ "pairs": 1068,
+ "hard_pairs": 735,
+ "all": {
+  "provided adjacency": {
+   "macro_mrr": 0.2477024627456161,
+   "macro_hits@1": 0.15869636792125874,
+   "macro_hits@10": 0.355247562136783,
+   "pooled_mrr": 0.20006510193309077,
+   "pooled_hits@1": 0.11313982521847692,
+   "pooled_hits@10": 0.31135188157660065,
+   "pairs": 1068,
+   "sources": 458
+  },
+  "lexical (BM25)": {
+   "macro_mrr": 0.19675370955900567,
+   "macro_hits@1": 0.11462232272821793,
+   "macro_hits@10": 0.36296716141318974,
+   "pooled_mrr": 0.16851091934124546,
+   "pooled_hits@1": 0.0931737114321384,
+   "pooled_hits@10": 0.3179338263034163,
+   "pairs": 1068,
+   "sources": 458
+  },
+  "callproof static calls": {
+   "macro_mrr": 0.6870356112922575,
+   "macro_hits@1": 0.5709005697405799,
+   "macro_hits@10": 0.8413272114901102,
+   "pooled_mrr": 0.6128728452578791,
+   "pooled_hits@1": 0.4773841401788891,
+   "pooled_hits@10": 0.8142400441681366,
+   "pairs": 1068,
+   "sources": 458
+  },
+  "pair ranker: logistic regression": {
+   "macro_mrr": 0.5684665759325952,
+   "macro_hits@1": 0.45122003641165903,
+   "macro_hits@10": 0.7774305926268119,
+   "pooled_mrr": 0.49692271165480834,
+   "pooled_hits@1": 0.3653050873907615,
+   "pooled_hits@10": 0.7358709694383851,
+   "pairs": 1068,
+   "sources": 458
+  },
+  "pair ranker: LightGBM": {
+   "macro_mrr": 0.5660354731262184,
+   "macro_hits@1": 0.45383776489987704,
+   "macro_hits@10": 0.7723009110234491,
+   "pooled_mrr": 0.5026897051591988,
+   "pooled_hits@1": 0.3759948501872659,
+   "pooled_hits@10": 0.7417416341340068,
+   "pairs": 1068,
+   "sources": 458
+  }
+ },
+ "hard": {
+  "provided adjacency": {
+   "macro_mrr": 0.004689138192313039,
+   "macro_hits@1": 0.0,
+   "macro_hits@10": 0.002374031007751938,
+   "pooled_mrr": 0.004761655772741435,
+   "pooled_hits@1": 0.0,
+   "pooled_hits@10": 0.0019274376417233558,
+   "pairs": 735,
+   "sources": 344
+  },
+  "lexical (BM25)": {
+   "macro_mrr": 0.1434115504472498,
+   "macro_hits@1": 0.08042116555924694,
+   "macro_hits@10": 0.27239428852301234,
+   "pooled_mrr": 0.12594644828176385,
+   "pooled_hits@1": 0.06852607709750567,
+   "pooled_hits@10": 0.2390063516780825,
+   "pairs": 735,
+   "sources": 344
+  },
+  "callproof static calls": {
+   "macro_mrr": 0.546014317542842,
+   "macro_hits@1": 0.39793971088872054,
+   "macro_hits@10": 0.7466161930409726,
+   "pooled_mrr": 0.4924442458923533,
+   "pooled_hits@1": 0.33710213773450765,
+   "pooled_hits@10": 0.7300794111177821,
+   "pairs": 735,
+   "sources": 344
+  },
+  "pair ranker: logistic regression": {
+   "macro_mrr": 0.4146811106541101,
+   "macro_hits@1": 0.28415304414577675,
+   "macro_hits@10": 0.6562685215301494,
+   "pooled_mrr": 0.37257383150399015,
+   "pooled_hits@1": 0.23761337868480722,
+   "pooled_hits@10": 0.6338914222587692,
+   "pairs": 735,
+   "sources": 344
+  },
+  "pair ranker: LightGBM": {
+   "macro_mrr": 0.41043362585176774,
+   "macro_hits@1": 0.279985119047619,
+   "macro_hits@10": 0.6643186861211686,
+   "pooled_mrr": 0.3710051674147873,
+   "pooled_hits@1": 0.22797619047619047,
+   "pooled_hits@10": 0.6601089323198901,
+   "pairs": 735,
+   "sources": 344
+  }
+ },
+ "per_repo": {
+  "click": {
+   "nodes": 1573,
+   "pairs": 234,
+   "hard_pairs": 166,
+   "all": {
+    "provided adjacency": {
+     "macro_mrr": 0.22386253003822854,
+     "macro_hits@1": 0.12580128205128205,
+     "macro_hits@10": 0.34618818681318686,
+     "pooled_mrr": 0.17608128001071974,
+     "pooled_hits@1": 0.08190883190883191,
+     "pooled_hits@10": 0.2905982905982906,
+     "pairs": 234,
+     "sources": 104
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.20486961893225814,
+     "macro_hits@1": 0.11979166666666666,
+     "macro_hits@10": 0.3932046667101015,
+     "pooled_mrr": 0.1604782839828589,
+     "pooled_hits@1": 0.0811965811965812,
+     "pooled_hits@10": 0.341205533596838,
+     "pairs": 234,
+     "sources": 104
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.6715487903660476,
+     "macro_hits@1": 0.5329888053676644,
+     "macro_hits@10": 0.881181898718325,
+     "pooled_mrr": 0.581733650545088,
+     "pooled_hits@1": 0.42060441633006873,
+     "pooled_hits@10": 0.8620100880138247,
+     "pairs": 234,
+     "sources": 104
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.56256213844379,
+     "macro_hits@1": 0.4360805860805861,
+     "macro_hits@10": 0.7663576007326007,
+     "pooled_mrr": 0.4997257134619689,
+     "pooled_hits@1": 0.37393162393162394,
+     "pooled_hits@10": 0.7076923076923076,
+     "pairs": 234,
+     "sources": 104
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.5647335956565743,
+     "macro_hits@1": 0.43633241758241764,
+     "macro_hits@10": 0.8058920246420247,
+     "pooled_mrr": 0.4922910301385493,
+     "pooled_hits@1": 0.3611111111111111,
+     "pooled_hits@10": 0.7435767935767936,
+     "pairs": 234,
+     "sources": 104
+    }
+   },
+   "hard": {
+    "provided adjacency": {
+     "macro_mrr": 0.00313074761374197,
+     "macro_hits@1": 0.0,
+     "macro_hits@10": 0.0,
+     "pooled_mrr": 0.0033541527938449416,
+     "pooled_hits@1": 0.0,
+     "pooled_hits@10": 0.0,
+     "pairs": 166,
+     "sources": 80
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.1185240617759468,
+     "macro_hits@1": 0.05989583333333333,
+     "macro_hits@10": 0.24211438923395448,
+     "pooled_mrr": 0.1135351923097403,
+     "pooled_hits@1": 0.05120481927710843,
+     "pooled_hits@10": 0.2531561026715558,
+     "pairs": 166,
+     "sources": 80
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.5270888246149757,
+     "macro_hits@1": 0.36655758009760236,
+     "macro_hits@10": 0.7715960322536626,
+     "pooled_mrr": 0.46719705125740785,
+     "pooled_hits@1": 0.279188210512323,
+     "pooled_hits@10": 0.8054840999712951,
+     "pairs": 166,
+     "sources": 80
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.4302557863882697,
+     "macro_hits@1": 0.30729166666666663,
+     "macro_hits@10": 0.626279761904762,
+     "pooled_mrr": 0.41055635029470766,
+     "pooled_hits@1": 0.29819277108433734,
+     "pooled_hits@10": 0.6120481927710844,
+     "pairs": 166,
+     "sources": 80
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.41144395027548886,
+     "macro_hits@1": 0.265,
+     "macro_hits@10": 0.7044602272727273,
+     "pooled_mrr": 0.3879247118113851,
+     "pooled_hits@1": 0.24397590361445784,
+     "pooled_hits@10": 0.6927528294998174,
+     "pairs": 166,
+     "sources": 80
+    }
+   }
+  },
+  "attrs": {
+   "nodes": 1365,
+   "pairs": 157,
+   "hard_pairs": 95,
+   "all": {
+    "provided adjacency": {
+     "macro_mrr": 0.3139503537646045,
+     "macro_hits@1": 0.23535007610350078,
+     "macro_hits@10": 0.41516920154266945,
+     "pooled_mrr": 0.2534188543936433,
+     "pooled_hits@1": 0.16666666666666669,
+     "pooled_hits@10": 0.38284804367606917,
+     "pairs": 157,
+     "sources": 73
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.26386708087529914,
+     "macro_hits@1": 0.1888454011741683,
+     "macro_hits@10": 0.37948019390404564,
+     "pooled_mrr": 0.19755455984324602,
+     "pooled_hits@1": 0.1305732484076433,
+     "pooled_hits@10": 0.3024020648599143,
+     "pairs": 157,
+     "sources": 73
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.6150539860858156,
+     "macro_hits@1": 0.5276041058476856,
+     "macro_hits@10": 0.7163364012920177,
+     "pooled_mrr": 0.5012593421174031,
+     "pooled_hits@1": 0.40024500875104174,
+     "pooled_hits@10": 0.6452590091078368,
+     "pairs": 157,
+     "sources": 73
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.5971551670081455,
+     "macro_hits@1": 0.482933933006031,
+     "macro_hits@10": 0.784553322188506,
+     "pooled_mrr": 0.5307023504912318,
+     "pooled_hits@1": 0.40764331210191085,
+     "pooled_hits@10": 0.7678588926996571,
+     "pairs": 157,
+     "sources": 73
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.5197668593171074,
+     "macro_hits@1": 0.4358224327943146,
+     "macro_hits@10": 0.7000402825392197,
+     "pooled_mrr": 0.4702623979332336,
+     "pooled_hits@1": 0.3609341825902335,
+     "pooled_hits@10": 0.7351599270392519,
+     "pairs": 157,
+     "sources": 73
+    }
+   },
+   "hard": {
+    "provided adjacency": {
+     "macro_mrr": 0.0022793730066635676,
+     "macro_hits@1": 0.0,
+     "macro_hits@10": 0.0,
+     "pooled_mrr": 0.002361995137550068,
+     "pooled_hits@1": 0.0,
+     "pooled_hits@10": 0.0,
+     "pairs": 95,
+     "sources": 50
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.21083869008405537,
+     "macro_hits@1": 0.13,
+     "macro_hits@10": 0.3343267973856209,
+     "pooled_mrr": 0.1298691168503968,
+     "pooled_hits@1": 0.06842105263157895,
+     "pooled_hits@10": 0.21028551771585827,
+     "pairs": 95,
+     "sources": 50
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.35792862895680927,
+     "macro_hits@1": 0.2534213206306312,
+     "macro_hits@10": 0.4876218851136818,
+     "pooled_mrr": 0.2650620138484937,
+     "pooled_hits@1": 0.15794876884821293,
+     "pooled_hits@10": 0.4137438361045304,
+     "pairs": 95,
+     "sources": 50
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.3930645851803371,
+     "macro_hits@1": 0.25133333333333335,
+     "macro_hits@10": 0.6497435897435896,
+     "pooled_mrr": 0.33582739326796557,
+     "pooled_hits@1": 0.2,
+     "pooled_hits@10": 0.6163562753036437,
+     "pairs": 95,
+     "sources": 50
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.3367856325824253,
+     "macro_hits@1": 0.25666666666666665,
+     "macro_hits@10": 0.5400688375699175,
+     "pooled_mrr": 0.2958727861562587,
+     "pooled_hits@1": 0.17543859649122803,
+     "pooled_hits@10": 0.614948511001711,
+     "pairs": 95,
+     "sources": 50
+    }
+   }
+  },
+  "more-itertools": {
+   "nodes": 1322,
+   "pairs": 85,
+   "hard_pairs": 38,
+   "all": {
+    "provided adjacency": {
+     "macro_mrr": 0.47742365263672065,
+     "macro_hits@1": 0.4135304659498208,
+     "macro_hits@10": 0.5430107526881721,
+     "pooled_mrr": 0.4870048628675029,
+     "pooled_hits@1": 0.4254901960784314,
+     "pooled_hits@10": 0.5529411764705883,
+     "pairs": 85,
+     "sources": 62
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.1820051853755024,
+     "macro_hits@1": 0.09274193548387097,
+     "macro_hits@10": 0.3702956989247312,
+     "pooled_mrr": 0.17159823145722614,
+     "pooled_hits@1": 0.08235294117647059,
+     "pooled_hits@10": 0.36519607843137253,
+     "pairs": 85,
+     "sources": 62
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.7351961869046654,
+     "macro_hits@1": 0.6895588676563196,
+     "macro_hits@10": 0.791758825189918,
+     "pooled_mrr": 0.7061782659731922,
+     "pooled_hits@1": 0.6667022970498502,
+     "pooled_hits@10": 0.7546011194446872,
+     "pairs": 85,
+     "sources": 62
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.7636129765047314,
+     "macro_hits@1": 0.6824596774193549,
+     "macro_hits@10": 0.9106182795698924,
+     "pooled_mrr": 0.7353755288473195,
+     "pooled_hits@1": 0.6625,
+     "pooled_hits@10": 0.8759803921568627,
+     "pairs": 85,
+     "sources": 62
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.7143472822199028,
+     "macro_hits@1": 0.6313844086021506,
+     "macro_hits@10": 0.848790322580645,
+     "pooled_mrr": 0.6924423405336778,
+     "pooled_hits@1": 0.6183823529411765,
+     "pooled_hits@10": 0.8191176470588235,
+     "pairs": 85,
+     "sources": 62
+    }
+   },
+   "hard": {
+    "provided adjacency": {
+     "macro_mrr": 0.0024423575761043973,
+     "macro_hits@1": 0.0,
+     "macro_hits@10": 0.0,
+     "pooled_mrr": 0.002364678636373468,
+     "pooled_hits@1": 0.0,
+     "pooled_hits@10": 0.0,
+     "pairs": 38,
+     "sources": 29
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.11024737751445973,
+     "macro_hits@1": 0.05172413793103448,
+     "macro_hits@10": 0.23563218390804597,
+     "pooled_mrr": 0.08667754889981258,
+     "pooled_hits@1": 0.039473684210526314,
+     "pooled_hits@10": 0.19298245614035087,
+     "pairs": 38,
+     "sources": 29
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.45171895773606496,
+     "macro_hits@1": 0.3909090315828941,
+     "macro_hits@10": 0.5319761744243714,
+     "pooled_mrr": 0.3895507996183975,
+     "pooled_hits@1": 0.3421849626992262,
+     "pooled_hits@10": 0.4510814513894317,
+     "pairs": 38,
+     "sources": 29
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.5321365055314945,
+     "macro_hits@1": 0.4073275862068966,
+     "macro_hits@10": 0.785919540229885,
+     "pooled_mrr": 0.4789101741760216,
+     "pooled_hits@1": 0.36348684210526316,
+     "pooled_hits@10": 0.7225877192982456,
+     "pairs": 38,
+     "sources": 29
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.44578720788852,
+     "macro_hits@1": 0.3297413793103448,
+     "macro_hits@10": 0.653735632183908,
+     "pooled_mrr": 0.38660348101831477,
+     "pooled_hits@1": 0.2779605263157895,
+     "pooled_hits@10": 0.5953947368421053,
+     "pairs": 38,
+     "sources": 29
+    }
+   }
+  },
+  "packaging": {
+   "nodes": 2258,
+   "pairs": 362,
+   "hard_pairs": 263,
+   "all": {
+    "provided adjacency": {
+     "macro_mrr": 0.1634213281716451,
+     "macro_hits@1": 0.038565323565323564,
+     "macro_hits@10": 0.3173137973137973,
+     "pooled_mrr": 0.14233732765263274,
+     "pooled_hits@1": 0.04235727440147329,
+     "pooled_hits@10": 0.27348066298342544,
+     "pairs": 362,
+     "sources": 130
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.10717727795212417,
+     "macro_hits@1": 0.046703296703296704,
+     "macro_hits@10": 0.2001776780130439,
+     "pooled_mrr": 0.08439771678330701,
+     "pooled_hits@1": 0.036306235201262825,
+     "pooled_hits@10": 0.1586388530617745,
+     "pairs": 362,
+     "sources": 130
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.7166391923459503,
+     "macro_hits@1": 0.6046815221815222,
+     "macro_hits@10": 0.8719167015620544,
+     "pooled_mrr": 0.6537638182713469,
+     "pooled_hits@1": 0.5319981583793738,
+     "pooled_hits@10": 0.8347708120071903,
+     "pairs": 362,
+     "sources": 130
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.5085027473521693,
+     "macro_hits@1": 0.376510989010989,
+     "macro_hits@10": 0.7882310744810745,
+     "pooled_mrr": 0.44612817212556455,
+     "pooled_hits@1": 0.2983425414364641,
+     "pooled_hits@10": 0.7328674471630272,
+     "pairs": 362,
+     "sources": 130
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.540896681421608,
+     "macro_hits@1": 0.4094993894993895,
+     "macro_hits@10": 0.7909565434565434,
+     "pooled_mrr": 0.48606495687063184,
+     "pooled_hits@1": 0.35497237569060774,
+     "pooled_hits@10": 0.7420938867762071,
+     "pairs": 362,
+     "sources": 130
+    }
+   },
+   "hard": {
+    "provided adjacency": {
+     "macro_mrr": 0.0011956569436658558,
+     "macro_hits@1": 0.0,
+     "macro_hits@10": 0.0,
+     "pooled_mrr": 0.0011554767605735212,
+     "pooled_hits@1": 0.0,
+     "pooled_hits@10": 0.0,
+     "pairs": 263,
+     "sources": 105
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.05874529373391254,
+     "macro_hits@1": 0.01984126984126984,
+     "macro_hits@10": 0.13221544715447153,
+     "pooled_mrr": 0.042852221220792866,
+     "pooled_hits@1": 0.015209125475285171,
+     "pooled_hits@10": 0.08771909487155709,
+     "pairs": 263,
+     "sources": 105
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.6277419510061413,
+     "macro_hits@1": 0.4892942176870748,
+     "macro_hits@10": 0.8252544263303381,
+     "pooled_mrr": 0.5710657033916553,
+     "pooled_hits@1": 0.44074778200253484,
+     "pooled_hits@10": 0.7725742735612277,
+     "pairs": 263,
+     "sources": 105
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.37579148224098,
+     "macro_hits@1": 0.2250907029478458,
+     "macro_hits@10": 0.6894973544973544,
+     "pooled_mrr": 0.32656715545650206,
+     "pooled_hits@1": 0.17110266159695817,
+     "pooled_hits@10": 0.6437186915323797,
+     "pairs": 263,
+     "sources": 105
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.41514206895979217,
+     "macro_hits@1": 0.2677210884353742,
+     "macro_hits@10": 0.7048804370232941,
+     "pooled_mrr": 0.36678392197322446,
+     "pooled_hits@1": 0.2224334600760456,
+     "pooled_hits@10": 0.6640227643079354,
+     "pairs": 263,
+     "sources": 105
+    }
+   }
+  },
+  "itsdangerous": {
+   "nodes": 136,
+   "pairs": 87,
+   "hard_pairs": 60,
+   "all": {
+    "provided adjacency": {
+     "macro_mrr": 0.2577409768171277,
+     "macro_hits@1": 0.21372549019607842,
+     "macro_hits@10": 0.2950980392156863,
+     "pooled_mrr": 0.27653575981887435,
+     "pooled_hits@1": 0.21839080459770116,
+     "pooled_hits@10": 0.3266283524904215,
+     "pairs": 87,
+     "sources": 34
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.28081317337352396,
+     "macro_hits@1": 0.15441176470588233,
+     "macro_hits@10": 0.6556652661064425,
+     "pooled_mrr": 0.28143209303315825,
+     "pooled_hits@1": 0.15363984674329503,
+     "pooled_hits@10": 0.607608100711549,
+     "pairs": 87,
+     "sources": 34
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.7907561990674316,
+     "macro_hits@1": 0.6875000000000001,
+     "macro_hits@10": 0.918425281963066,
+     "pooled_mrr": 0.7640565313801722,
+     "pooled_hits@1": 0.6436781609195402,
+     "pooled_hits@10": 0.924648950804934,
+     "pairs": 87,
+     "sources": 34
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.5974586235620191,
+     "macro_hits@1": 0.4522058823529411,
+     "macro_hits@10": 0.7941176470588235,
+     "pooled_mrr": 0.5689857015678491,
+     "pooled_hits@1": 0.39463601532567044,
+     "pooled_hits@10": 0.8160919540229885,
+     "pairs": 87,
+     "sources": 34
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.6258560689894713,
+     "macro_hits@1": 0.49411764705882355,
+     "macro_hits@10": 0.8125,
+     "pooled_mrr": 0.5619159786367206,
+     "pooled_hits@1": 0.39463601532567044,
+     "pooled_hits@10": 0.8160919540229885,
+     "pairs": 87,
+     "sources": 34
+    }
+   },
+   "hard": {
+    "provided adjacency": {
+     "macro_mrr": 0.022961043405195686,
+     "macro_hits@1": 0.0,
+     "macro_hits@10": 0.026344086021505377,
+     "pooled_mrr": 0.023893518404034537,
+     "pooled_hits@1": 0.0,
+     "pooled_hits@10": 0.023611111111111107,
+     "pairs": 60,
+     "sources": 31
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.26480139130162195,
+     "macro_hits@1": 0.14086021505376345,
+     "macro_hits@10": 0.6171274961597542,
+     "pooled_mrr": 0.2521190784506041,
+     "pooled_hits@1": 0.11444444444444445,
+     "pooled_hits@10": 0.5726984126984127,
+     "pairs": 60,
+     "sources": 31
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.7102673925320259,
+     "macro_hits@1": 0.5758064516129032,
+     "macro_hits@10": 0.8761713953484066,
+     "pooled_mrr": 0.6981597482790275,
+     "pooled_hits@1": 0.5583333333333333,
+     "pooled_hits@10": 0.8907409786671543,
+     "pairs": 60,
+     "sources": 31
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.5767006588757677,
+     "macro_hits@1": 0.45161290322580644,
+     "macro_hits@10": 0.7451612903225807,
+     "pooled_mrr": 0.5722909026967814,
+     "pooled_hits@1": 0.40555555555555556,
+     "pooled_hits@10": 0.8,
+     "pairs": 60,
+     "sources": 31
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.5652922892725712,
+     "macro_hits@1": 0.421505376344086,
+     "macro_hits@10": 0.7951612903225806,
+     "pooled_mrr": 0.5158501688233146,
+     "pooled_hits@1": 0.33888888888888885,
+     "pooled_hits@10": 0.8166666666666667,
+     "pairs": 60,
+     "sources": 31
+    }
+   }
+  },
+  "h11": {
+   "nodes": 251,
+   "pairs": 143,
+   "hard_pairs": 113,
+   "all": {
+    "provided adjacency": {
+     "macro_mrr": 0.13889848456595275,
+     "macro_hits@1": 0.08181818181818182,
+     "macro_hits@10": 0.20803030303030304,
+     "pooled_mrr": 0.10978749751047322,
+     "pooled_hits@1": 0.03496503496503497,
+     "pooled_hits@10": 0.2097902097902098,
+     "pairs": 143,
+     "sources": 55
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.2687172033348327,
+     "macro_hits@1": 0.16693722943722944,
+     "macro_hits@10": 0.47944672566812624,
+     "pooled_mrr": 0.29216267318717093,
+     "pooled_hits@1": 0.1853146853146853,
+     "pooled_hits@10": 0.49582707140173593,
+     "pairs": 143,
+     "sources": 55
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.623478644148455,
+     "macro_hits@1": 0.4143686868686869,
+     "macro_hits@10": 0.867776548179295,
+     "pooled_mrr": 0.535414228974882,
+     "pooled_hits@1": 0.30303030303030304,
+     "pooled_hits@10": 0.8379003799089091,
+     "pairs": 143,
+     "sources": 55
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.4453808597671964,
+     "macro_hits@1": 0.35305981896890987,
+     "macro_hits@10": 0.6029319165682802,
+     "pooled_mrr": 0.39825381658903264,
+     "pooled_hits@1": 0.27972027972027974,
+     "pooled_hits@10": 0.6223776223776224,
+     "pairs": 143,
+     "sources": 55
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.4851593742780078,
+     "macro_hits@1": 0.3906060606060606,
+     "macro_hits@10": 0.6495228256591893,
+     "pooled_mrr": 0.44856995879832184,
+     "pooled_hits@1": 0.3146853146853147,
+     "pooled_hits@10": 0.6538461538461539,
+     "pairs": 143,
+     "sources": 55
+    }
+   },
+   "hard": {
+    "provided adjacency": {
+     "macro_mrr": 0.006948375191227359,
+     "macro_hits@1": 0.0,
+     "macro_hits@10": 0.0,
+     "pooled_mrr": 0.007887423103224229,
+     "pooled_hits@1": 0.0,
+     "pooled_hits@10": 0.0,
+     "pairs": 113,
+     "sources": 49
+    },
+    "lexical (BM25)": {
+     "macro_mrr": 0.23949879565806095,
+     "macro_hits@1": 0.17190233236151603,
+     "macro_hits@10": 0.36267829751864517,
+     "pooled_mrr": 0.2804885461645504,
+     "pooled_hits@1": 0.20353982300884957,
+     "pooled_hits@10": 0.43277231159688706,
+     "pairs": 113,
+     "sources": 49
+    },
+    "callproof static calls": {
+     "macro_mrr": 0.5455988575350122,
+     "macro_hits@1": 0.2925170068027211,
+     "macro_hits@10": 0.8466705406392783,
+     "pooled_mrr": 0.4630807401088232,
+     "pooled_hits@1": 0.21238938053097345,
+     "pooled_hits@10": 0.7948650825395929,
+     "pairs": 113,
+     "sources": 49
+    },
+    "pair ranker: logistic regression": {
+     "macro_mrr": 0.3226290851851102,
+     "macro_hits@1": 0.22758415054333422,
+     "macro_hits@10": 0.5077126954677975,
+     "pooled_mrr": 0.31294342460618374,
+     "pooled_hits@1": 0.20353982300884957,
+     "pooled_hits@10": 0.5398230088495575,
+     "pairs": 113,
+     "sources": 49
+    },
+    "pair ranker: LightGBM": {
+     "macro_mrr": 0.3549502531602599,
+     "macro_hits@1": 0.23554421768707481,
+     "macro_hits@10": 0.5621344641752805,
+     "pooled_mrr": 0.3369846665246129,
+     "pooled_hits@1": 0.18584070796460178,
+     "pooled_hits@10": 0.5796460176991151,
+     "pairs": 113,
+     "sources": 49
+    }
+   }
+  }
+ },
+ "seconds": 95.3
+}

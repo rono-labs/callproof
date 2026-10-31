@@ -34,7 +34,7 @@ Other findings from the audit:
 | LightGBM, 9 pair features | .388 | **.636** |
 | Callproof static `calls` (no training) | **.450** | .532 |
 
-Full tables, including logistic regression and GraphSAGE with pair features: [`results/linkpred/RESULTS.md`](results/linkpred/RESULTS.md).
+On six libraries outside the competition (1,068 traced pairs, [`results/linkpred/unseen/RESULTS.md`](results/linkpred/unseen/RESULTS.md)) the static resolver still leads on hard pairs: .546 vs .415 for logistic regression trained on CallproofLP. Full tables, including logistic regression and GraphSAGE with pair features: [`results/linkpred/RESULTS.md`](results/linkpred/RESULTS.md).
 
 A negative result is reported too: plain BM25 and PageRank localization do not improve with the better graph ([`results/loc/baselines_eval.txt`](results/loc/baselines_eval.txt)).
 
@@ -123,6 +123,7 @@ Run everything from the repository root. Developed on Linux. The ground-truth st
    ```bash
    python scripts/linkpred.py build && python scripts/linkpred.py eval
    python scripts/linkpred_learned.py
+   python scripts/linkpred_unseen.py   # needs scripts/generality.py traces of the six outside libraries
    ```
 
 7. Agent runs with Gemma 4 on CPU. Build [llama.cpp](https://github.com/ggml-org/llama.cpp) and download the Gemma 4 E4B `q4_0` GGUF (`gemma-4-E4B_q4_0-it.gguf`) into `~/.cache/callproof/models` (or set `CALLPROOF_MODELS`; the E2B file is `gemma-4-E2B_q4_0-it.gguf`). Point `LLAMA_SERVER` at the `llama-server` binary if it is not on `PATH`:
