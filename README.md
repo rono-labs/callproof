@@ -4,7 +4,7 @@ Test-execution traces as ground truth for the code graphs coding agents navigate
 
 ![Executed call edges linked by the provided graphs and by Callproof](docs/thumbnail.png)
 
-Paper: {{writeup_url}} (PDF: `docs/callproof.pdf`). Kaggle notebook: {{notebook_url}}.
+Paper: {{writeup_url}} (PDF: [docs/callproof.pdf](docs/callproof.pdf)). Kaggle notebook: {{notebook_url}}.
 
 ## Headline numbers
 
